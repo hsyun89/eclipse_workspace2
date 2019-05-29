@@ -8,17 +8,23 @@
 		<item value="900" key="dialogHeight"/>
 		<item value="777" key="dialogWidth"/>
 		<list key="textEntries">
+			<item value="3"/>
 			<item value="2"/>
 		</list>
 		<list key="orderedElements">
 			<item value="org.eclipse.ui.browser.view"/>
+			<item value="org.eclipse.ui.browser.preferencePage"/>
 		</list>
 		<list key="orderedProviders">
 			<item value="org.eclipse.e4.ui.parts"/>
+			<item value="org.eclipse.ui.preferences"/>
 		</list>
 		<list key="textArray">
 			<item value="web bro"/>
 			<item value="we"/>
+			<item value="web"/>
+			<item value="web br"/>
+			<item value="w"/>
 		</list>
 	</section>
 	<section name="NewWizardAction">
