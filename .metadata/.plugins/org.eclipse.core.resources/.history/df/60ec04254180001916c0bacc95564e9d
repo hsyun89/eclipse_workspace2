@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>회원 정보를 입력하시오.</h1>
+<hr>
+<form>
+<input name=name type=text placeholder="이름을 입력하세요."><br>
+남기고자 하는 의견 :<br>
+<textarea name = "memo" rows="10" cols="50"></textarea><br>
+<input type="submit" value="등록">
+<input type="reset" value="재작성">
+</form>
+</body>
+</html>

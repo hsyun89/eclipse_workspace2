@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div {
+	width: 100px;
+	height: 100px;
+	margin-bottom: 10px;
+}
+
+div.jbGrad01 {
+	background-image: linear-gradient(to bottom, yellow, green);
+}
+</style>
+</head>
+<body>
+	<h1>백그라운드 그라디언트</h1>
+	<hr>
+	<div class="jbGrad01">to bottom</div>
+	<div class="jbGrad02">to top</div>
+	<div class="jbGrad03">to right</div>
+	<div class="jbGrad04">to left</div>
+	<div class="jbGrad05">45deg</div>
+</body>
+</html>

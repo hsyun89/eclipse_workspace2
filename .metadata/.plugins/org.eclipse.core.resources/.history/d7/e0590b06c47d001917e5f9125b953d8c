@@ -1,0 +1,42 @@
+package jdbcexam;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+public class SearchEmp2 {
+
+	public static void main(String[] args) throws Exception {
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "scott", "tiger");
+		Scanner sc = new Scanner(System.in);
+		String request = null;
+		int count = 0;
+		PreparedStatement pstmt = conn.prepareStatement("select ename from emp where deptno=?");
+		
+		while (true) {
+			count = 0;
+			request = sc.next();
+			if (request.equals("종료")) {
+				break;
+			} else {
+				pstmt.setString(1, request);
+				ResultSet rs = pstmt.executeQuery();
+				if(pstmt.executeUpdate()!=0) {
+					System.out.println(request + " 부서에서 근무하는 직원들");
+					while (rs.next()) {
+						System.out.println(rs.getString("ename"));
+					}
+				}
+				else
+					System.out.print(request + "부서에서 근무하는 직원이 없습니다.");
+			}
+		}
+		sc.close();
+
+	}
+
+}

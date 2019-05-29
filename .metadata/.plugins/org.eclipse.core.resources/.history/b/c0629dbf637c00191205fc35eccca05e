@@ -1,0 +1,40 @@
+package jdbcexam;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+public class SearchEmp {
+
+	public static void main(String[] args) throws Exception {
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "jdbctest", "jdbctest");
+		Scanner sc = new Scanner(System.in);
+		String ename = null;
+		while (true) {
+			System.out.println("직원의 이름을 입력하시오 or 종료");
+			ename = sc.next();
+			if(ename== "종료")
+				break;
+			else{
+				PreparedStatement pstmt = conn
+						.prepareStatement("select to_char(hiredate,'yyyy\"년 \"mm\"월 \"') hiredate," 
+				+ " deptno "
+				+ "from emp " 
+				+ "where ename=?");
+				pstmt.setString(1, ename);
+				
+				ResultSet rs = pstmt.executeQuery();
+				while (rs.next()) {
+					System.out.print(rs.getString(),);
+				}
+				rs.close();
+				
+			}
+		}
+		sc.close();
+	}
+
+}

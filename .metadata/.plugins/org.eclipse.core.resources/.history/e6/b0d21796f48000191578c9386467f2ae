@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+img:hover {
+	opacity: 0.5;
+}
+
+h1 {
+	color: #bfff80;
+}
+
+h1:hover {
+	color: #80bfff;
+}
+
+h1, a {
+	border: 1px solid green;
+}
+</style>
+</head>
+<body>
+	<h1>CSS <span color="red">선택자</span>와 속성들 학습(1)</h1>
+	<hr>
+	<a href="http://www.w3.org/">W3C 홈페이지</a>
+	<br>
+	<a href="http://www.w3schools.com/">Web Client 기술 학습</a>
+	<br>
+	<img src="/edu/images/totoro.png" width="200">
+	<img src="/edu/images/totoro.png" width="200">
+	<img src="/edu/images/totoro.png" width="200">
+</body>
+</html>

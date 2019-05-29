@@ -1,0 +1,42 @@
+package codingtest;
+
+import java.util.LinkedList;
+
+public class print {
+
+	public static void main(String[] args) {
+		int[] priorities = new int[] { 2, 1, 3, 2 };
+		int location = 2;
+		System.out.println(solution(priorities, location));
+		// return 1이 나와야함
+	}
+//구현
+	public static int solution(int[] priorities, int location) {
+		LinkedList<Integer> qu = new LinkedList<Integer>();
+		LinkedList<Integer> loc = new LinkedList<Integer>();
+		for(int i = 0; i<priorities.length;i++) {
+			qu.add(priorities[i]);  //2,1,3,2
+			loc.add(i); //0,1,2,3
+		}
+		System.out.println(qu);  
+		System.out.println(loc);  
+		//앞에가 제일크지 않다면 뒤로보내기
+		int max=qu.get(0);
+		for(int i =1; i<priorities.length;i++) {
+			if(qu.get(i)>max) {
+				max=qu.get(i);
+			}
+			if(max==qu.get(0)) {
+				qu.add(qu.peek());
+				qu.remove();
+			}
+		}
+
+		//제일크다면 빼내기
+		
+		
+		
+		int answer = 0;
+		return answer;
+	}
+}

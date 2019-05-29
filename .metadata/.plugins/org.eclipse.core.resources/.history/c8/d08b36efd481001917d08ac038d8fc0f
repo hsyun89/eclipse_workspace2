@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>자바스크립트의 변수 선언과 활용(2)</h1>
+	<hr>
+	<ul>
+	<script>
+	var v1;
+	document.writeln("<li>"+v1+ "</li>");
+	document.writeln("<li>"+typeof v1+ "</li>");
+	document.writeln("<li>"+(v1+10)+ "</li>");
+	v1=100;
+	document.writeln("<li>"+v1+ "</li>");
+	document.writeln("<li>"+typeof v1+ "</li>");
+	document.writeln("<li>"+(v1+10)+ "</li>");
+	v1=ture;
+	document.writeln("<li>"+v1+ "</li>");
+	document.writeln("<li>"+typeof v1+ "</li>");
+	document.writeln("<li>"+(v1+10)+ "</li>");
+	v1= '가나다'';
+	document.writeln("<li>"+v1+ "</li>");
+	document.writeln("<li>"+typeof v1+ "</li>");
+	document.writeln("<li>"+(v1+10)+ "</li>");
+
+	</script>
+	</ul>
+</body>
+</html>

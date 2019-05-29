@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="81" key="DIALOG_X_ORIGIN"/>
+		<item value="368" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="Otab" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="Ltab"/>
+			<item value="objA[1]"/>
+			<item value="Member5"/>
+			<item value="Member2"/>
+			<item value="b"/>
+			<item value="mem3"/>
+			<item value="mem2"/>
+			<item value="onjA"/>
+			<item value="mem1"/>
+			<item value="Member"/>
+			<item value="apple"/>
+			<item value="firstRan"/>
+			<item value="case"/>
+			<item value=""/>
+		</list>
+		<list key="replacehistory">
+			<item value="Otab"/>
+			<item value="proArr[4]"/>
+			<item value="Member4"/>
+			<item value="Member5"/>
+			<item value="bookArr"/>
+			<item value="Member3"/>
+			<item value="objA[2]"/>
+			<item value="objA[1]"/>
+			<item value="objA"/>
+			<item value="onjA[1]"/>
+			<item value="Member2"/>
+			<item value="check"/>
+			<item value="ran"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="288" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="390" key="DIALOG_HEIGHT"/>
+		<item value="78" key="DIALOG_X_ORIGIN"/>
+		<item value="231" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

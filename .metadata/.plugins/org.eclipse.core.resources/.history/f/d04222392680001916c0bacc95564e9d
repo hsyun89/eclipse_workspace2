@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<H1>리스트 출력 태그</H1>
+	<hr>
+	<H2>좋아하는 칼라</H2>
+	<ul>
+		<li>녹색</li>
+		<li>보라색</li>
+		<li>주황색</li>
+	</ul>
+	<hr>
+	<H2>좋아하는 칼라</H2>
+	<ol>
+		<li>피자</li>
+		<li>떡볶이</li>
+		<li>짜장면</li>
+	</ol>
+		<hr>
+</body>
+</html>
