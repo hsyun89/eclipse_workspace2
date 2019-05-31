@@ -7,7 +7,9 @@ public class print {
 	public static void main(String[] args) {
 //		int[] priorities = new int[] { 2, 1, 3, 2 };
 //		int location = 2;
-		int[] priorities = new int[] { 1, 1, 9, 1, 1, 1};
+//		int[] priorities = new int[] { 1, 1, 9, 1, 1, 1};
+//		int location = 0;
+		int[] priorities = new int[] { 1};
 		int location = 0;
 		System.out.println(solution(priorities, location));
 		// return 1이 나와야함

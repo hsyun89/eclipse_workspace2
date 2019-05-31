@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>함수의 아규먼트 처리</h1>
+	<hr>
+
+
+	<script>
+		function pr(p) {
+			document.write(typeof p + " : " + p + "<br>");
+		}
+		pr(100);
+		pr("100");
+		pr(true);
+		pr(3.5);
+		pr(new Array(1, 2, 3));
+		document.write("<hr>");
+	</script>
+	<hr>
+	<script>
+		function prNum(p) {
+			if (typeof p == "number")
+				document.write("숫자 전달 : " + p + "<br>");
+			else if (p == undefined)
+				document.write("아규먼트를 전달하시오 : " + p + "<br>");
+			else
+				document.write(typeof p + " : " + p + "<br>");
+		}
+		prNum(100);
+		prNum("100");
+		prNum(true);
+		prNum(3.5);
+		prNum(new Array(1, 2, 3));
+		prNum();
+		document.write("<hr>");
+	</script>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-span.blue {
+#blue {
 	color: blue;
 }
 
@@ -16,38 +16,31 @@ span.red {
 <body>
 	<pre>
 <script>
-	var num1 = window.prompt("숫자1 입력해 주세요!");
-	var num2 = window.prompt("숫자2 입력해 주세요!");
+	var num1 = parseInt(window.prompt("숫자1 입력해 주세요!"));
+	var num2 = parseInt(window.prompt("숫자2 입력해 주세요!"));
 	var oper = window.prompt("연산자를 입력해 주세요!");
+	var result = 0;
+	var err = 0;
 	if (oper == '+') {
-		var result = parseInt(num1) + parseInt(num2);
-		document.writeln("<h2><span class=\"blue\">" + num1 + " 와 " + num2
-				+ " 의 " + oper + " 연산 결과는 " + result + " 입니다.</span></h2>");
-
+		result = num1 + num2;
 	} else if (oper == '-') {
-		var result = parseInt(num1) - parseInt(num2);
-		document.writeln("<h2><span class=\"blue\">" + num1 + " 와 " + num2
-				+ " 의 " + oper + " 연산 결과는 " + result + "입니다.</span></h2>");
-
+		result = num1 - num2;
 	} else if (oper == '*') {
-		var result = parseInt(num1) * parseInt(num2);
-		document.writeln("<h2><span class=\"blue\">" + num1 + " 와 " + num2
-				+ " 의 " + oper + " 연산 결과는 " + result + "입니다.</span></h2>");
-
+		result = num1 * num2;
 	} else if (oper == '/') {
-		var result = parseInt(num1) / parseInt(num2);
-		document.writeln("<h2><span class=\"blue\">" + num1 + " 와 " + num2
-				+ " 의 " + oper + " 연산 결과는 " + result + "입니다.</span></h2>");
-
+		result = num1 / num2;
 	} else if (oper == '%') {
-		var result = parseInt(num1) % parseInt(num2);
-		document.writeln("<h2><span class=\"blue\">" + num1 + " 와 " + num2
-				+ " 의 " + oper + " 연산 결과는 " + result + "입니다.</span></h2>");
+		result = num1 % num2;
+	} else {
+		err = 1;
+	}
 
+	if (err == 0) {
+		document.writeln("<h2><span id=\"blue\">" + num1 + " 와 " + num2
+				+ " 의 " + oper + " 연산 결과는 " + result + " 입니다.</span></h2>");
 	} else {
 		document
 				.writeln("<h2><span class=\"red\">+, -, *, /, % 만 입력 가능</span></h2>");
-
 	}
 </script>
 </pre>

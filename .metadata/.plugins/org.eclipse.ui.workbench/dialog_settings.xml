@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="53" key="DIALOG_X_ORIGIN"/>
-		<item value="239" key="DIALOG_Y_ORIGIN"/>
+		<item value="388" key="DIALOG_X_ORIGIN"/>
+		<item value="182" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="EditorSelectionDialog">
+		<item value="false" key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL"/>
+		<item value="" key="EditorSelectionDialog.STORE_ID_FILE_EXTENSION"/>
+		<item value="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" key="EditorSelectionDialog.STORE_ID_DESCR"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="900" key="dialogHeight"/>
 		<item value="777" key="dialogWidth"/>
 		<list key="textEntries">
+			<item value="1"/>
+			<item value="1"/>
 			<item value="3"/>
 			<item value="2"/>
 		</list>
 		<list key="orderedElements">
+			<item value="org.eclipse.ui.preferencePages.FileEditors"/>
+			<item value="org.eclipse.wst.jsdt.ui.preferences.CodeAssistPreferencePage"/>
 			<item value="org.eclipse.ui.browser.view"/>
 			<item value="org.eclipse.ui.browser.preferencePage"/>
 		</list>
 		<list key="orderedProviders">
+			<item value="org.eclipse.ui.preferences"/>
+			<item value="org.eclipse.ui.preferences"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 			<item value="org.eclipse.ui.preferences"/>
 		</list>
 		<list key="textArray">
+			<item value="file asso"/>
+			<item value="auto ac"/>
 			<item value="web bro"/>
 			<item value="we"/>
 			<item value="web"/>
@@ -32,5 +45,12 @@
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.wst.web.ui"/>
 		</list>
+	</section>
+	<section name="InstallationDialogSettings">
+		<item value="1153" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="734" key="DIALOG_HEIGHT"/>
+		<item value="-174" key="DIALOG_X_ORIGIN"/>
+		<item value="-231" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

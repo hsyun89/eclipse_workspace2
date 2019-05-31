@@ -1,0 +1,5 @@
+[Error - 17:37:41] Server initialization failed.
+Error: Connection got disposed.
+	at Object.dispose (C:\Users\student\.codemix\extensions\mkaufman.htmlhint-0.6.0\node_modules\vscode-jsonrpc\lib\main.js:825:25)
+	at Object.dispose (C:\Users\student\.codemix\extensions\mkaufman.htmlhint-0.6.0\node_modules\vscode-languageclient\lib\client.js:57:35)
+	at stop.resolveConnection.then.connection.shutdown.then (C:\Users\student\.codemix\extensions\mkaufman.htmlhint-0.6.0\node_modules\vscode-languageclient\lib\client.js:1791:28)
