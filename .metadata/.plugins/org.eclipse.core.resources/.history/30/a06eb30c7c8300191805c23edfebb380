@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script src="util.js"></script>
+	<script>
+		//(1)printObject(p) 함수 구현
+		function printObject(p) {
+			if (typeof p == "object") {
+				writeColor(p.tag, p.color, p.msg);
+			}
+		}
+
+		//(2)전역 코드 영역
+		var p1 = {
+			tag : "h1",
+			color : "red",
+			msg : "AAA"
+		};
+		printObject(p1);
+		var p2 = {
+			tag : "h2",
+			color : "blue",
+			msg : "BBB"
+		};
+		printObject(p2);
+	</script>
+</body>
+</html>

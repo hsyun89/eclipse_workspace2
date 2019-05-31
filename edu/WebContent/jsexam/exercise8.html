@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script src="util.js"></script>
+	<script>
+		function printObject(p) {
+			if (typeof p == "object") {
+				var outTag = p.tag;
+				var outColor = p.color;
+				var outContent = p.content;
+				writeColor(outContent, outTag, outColor);
+			}
+		}
+		var input1 = {
+			tag : "h1",
+			content : "ㄱㄱㄱ",
+			color : "red"
+		}
+		printObject(input1);
+
+		var input2 = {
+			tag : "h2",
+			content : "ㄴㄴㄴ",
+			color : "orange"
+		}
+		printObject(input2);
+
+		var input3 = {
+			tag : "h3",
+			content : "ㄷㄷㄷ",
+			color : "yellow"
+		}
+		printObject(input3);
+
+		var input4 = {
+			tag : "h4",
+			content : "ㄹㄹㄹ",
+			color : "green"
+		}
+		printObject(input4);
+
+		var input5 = {
+			tag : "h5",
+			content : "ㅁㅁㅁ",
+			color : "blue"
+		}
+		printObject(input5);
+	</script>
+
+</body>
+</html>
