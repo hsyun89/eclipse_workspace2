@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../util.js"></script>
+</head>
+<body>
+	<h1 id="test">DOM객체를 찾자</h1>
+	<h1>ㅋㅋㅋㅋㅋㅋ</h1>
+	<hr>
+	<script>
+		var dom = documetn.getElementsByTagName("h1");
+		write(dom, "h2");
+		write(dom[1], "h2");
+		write(dom[1].textContent, "h2"); //innerText
+		write(dom[1].innerHTML, "h2");
+	</script>
+</body>
+</html>

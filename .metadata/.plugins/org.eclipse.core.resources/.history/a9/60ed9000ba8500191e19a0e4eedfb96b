@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script src="../util.js"></script>
+	<script>
+		write(document.getElementById("t1"), "h3");
+		write(document.getElementById("t2"), "h3");
+		write(document.getElementById("t3"), "h3");
+		write(document.getElementById("t4"), "h3");
+		write(document.getElementById("t5"), "h3");
+		write(document.getElementById("t6"), "h3");
+	</script>
+	<h1 id="t1">콘텐트1</h1>
+	<h2 id="t2">컨텐트5</h2>
+	<p id="t3">컨텐트2</p>
+	<div id="t4">컨텐트2</div>
+	<img id="t5" src="../../images/totoro.png" width="100">
+
+
+</body>
+</html>

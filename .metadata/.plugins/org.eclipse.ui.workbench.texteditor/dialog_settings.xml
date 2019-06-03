@@ -20,12 +20,6 @@
 			<item value="mem3"/>
 			<item value="mem2"/>
 			<item value="onjA"/>
-			<item value="mem1"/>
-			<item value="Member"/>
-			<item value="apple"/>
-			<item value="firstRan"/>
-			<item value="case"/>
-			<item value=""/>
 		</list>
 		<list key="replacehistory">
 			<item value="Otab"/>
@@ -36,11 +30,6 @@
 			<item value="Member3"/>
 			<item value="objA[2]"/>
 			<item value="objA[1]"/>
-			<item value="objA"/>
-			<item value="onjA[1]"/>
-			<item value="Member2"/>
-			<item value="check"/>
-			<item value="ran"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

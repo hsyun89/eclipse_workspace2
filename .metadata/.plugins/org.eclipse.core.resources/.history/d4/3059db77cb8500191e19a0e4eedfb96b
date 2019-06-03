@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		var ranNum = parseInt(Math.random() * 3) + 1;
+		if (ranNum == 1) {
+			var r = confirm("다음으로 이동");
+			if (r == true) {
+				location.href = "http://daum.net/";
+			} else {
+				location.href = "/edu/first.html";
+			}
+		}
+		if (ranNum == 2) {
+			var r = confirm("네이버로 이동");
+			if (r == true) {
+				location.href = "http://naver.com/";
+			} else {
+				location.href = "/edu/first.html";
+			}
+		}
+		if (ranNum == 3) {
+			var r = confirm("구글로 이동");
+			if (r == true) {
+				location.href = "http://google.com/";
+			} else {
+				location.href = "/edu/first.html";
+			}
+		}
+	</script>
+
+</body>
+</html>

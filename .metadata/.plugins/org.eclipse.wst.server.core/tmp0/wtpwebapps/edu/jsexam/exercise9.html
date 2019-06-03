@@ -25,12 +25,13 @@
 		 각각의 getTotalDays(), getKorDay() 메서드의 
 		 호출결과를 <h3> 태그와 함께 도큐먼트 영역에 출력한다. */
 		function DayInfo(p1, p2, p3, p4) {
-			this.name = p1, this.year = p2, this.month = p3, this.day = p4
+			this.name = p1, this.year = p2, this.month = p3 - 1, this.day = p4
 		}
 		DayInfo.prototype.getTotalDays = function() {
-			var hisDay = new Date(this.year+this.month+this.day);
+			var hisDay = new Date(this.year, this.month, this.day);
 			var today = new Date();
-			return this.name + "님은 태어난지 " + parseInt((today - hisDay)/86400000) + "일 되었어요.<br>";
+			return this.name + "님은 태어난지 "
+					+ parseInt((today - hisDay) / 86400000) + "일 되었어요.<br>";
 		};
 		DayInfo.prototype.getKorDays = function() {
 			var hisDay = new Date(this.year, this.month, this.day);
@@ -42,24 +43,25 @@
 			weekday[4] = "Thursday";
 			weekday[5] = "Friday";
 			weekday[6] = "Saturday";
-			return this.name + "님은 " + weekday[hisDay.getDay()] + "요일에 태어났어요.<br>";
+			return this.name + "님은 " + weekday[hisDay.getDay()]
+					+ "요일에 태어났어요.<br>";
 		};
-		var day1 = new DayInfo('sss', 2019, 05, 30);
-		document.write(day1.getTotalDays());
-		document.write(day1.getKorDays());
-		
-		var day2 = new DayInfo('aaa', 2010, 10, 30);
-		document.write(day2.getTotalDays());
-		document.write(day2.getKorDays());
-		
-		var day3 = new DayInfo('ppp', 2000, 10, 31);
-		document.write(day3.getTotalDays());
-		document.write(day3.getKorDays());
-		
-		var ddd = new Date();
-		document.write(ddd);
-		var ddd1 = new Date('2019-05-31');
-		document.write(ddd1);
+		var day1 = new DayInfo('sss', 2019, 06, 03);
+		document.write("<h3>"+day1.getTotalDays()+"</h3>");
+		document.write("<h3>"+day1.getKorDays()+"</h3>");
+
+		var day2 = new DayInfo('aaa', 2019, 5, 31);
+		document.write("<h3>"+day2.getTotalDays()+"</h3>");
+		document.write("<h3>"+day2.getKorDays()+"</h3>");
+
+		var day3 = new DayInfo('hsy', 1989, 10, 31);
+		document.write("<h3>"+day3.getTotalDays()+"</h3>");
+		document.write("<h3>"+day3.getKorDays()+"</h3>");
+
+		/* 		var ddd = new Date();
+		 document.write(ddd);
+		 var ddd1 = new Date(2019, 05, 03);
+		 document.write(ddd1); */
 	</script>
 
 </body>

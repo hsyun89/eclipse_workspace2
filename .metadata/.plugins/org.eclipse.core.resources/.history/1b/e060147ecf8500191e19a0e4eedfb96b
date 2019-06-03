@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="redColor()">레드</button>
+	<button onclick="blueColor()">블루</button>
+	<button onclick="blueGreen()">그린</button>
+	<output></output>
+	<script>
+		/* 	파일명 : exercise11.html
+
+		다음 자바스크립트로 기능을 구현해 본다.
+
+		1) "오늘은 XXXX년 X월 X일입니다."
+		를 <h2> 태그로 출력하는 자바스크립트 코드를 작성한다.
+
+		2) "XX색" 버튼과 "XX색" 버튼 3개를 출력한다.
+
+		3) 어떤 버튼이 클릭되는가에 따라서 
+		위에 출력된 "오늘은 XXXX년 X월 X일입니다."의 칼라로
+		변경한다.
+		 */
+		var dd = new Date();
+		var year = dd.getFullYear();
+		var month = dd.getMonth() + 1;
+		var day = dd.getDate();
+		document.write("<h2>" + "오늘은 " + year + "년 " + month + "월 " + day
+				+ "일 입니다." + "</h2>");
+
+		var target = document.getElementsByTagName("output")[0];
+
+		function redColor() {
+			dom.style.color = "red";
+		}
+		function redBlue() {
+			dom.style.color = "blue";
+		}
+		function redGreen() {
+			dom.style.color = "green";
+		}
+	</script>
+
+</body>
+</html>
