@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button id="print">이미지 보이기</button>
+	<button id="remove">이미지 숨기기</button>
+	<br>
+	<br>
+	<img width="50%" src="burningsun.jpg">
+</body>
+</html>

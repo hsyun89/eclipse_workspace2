@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단~~</title>
+<style>
+div {
+	width: 80%;
+	height: 100%;
+	margin: 20px auto;
+	text-align: center;
+	border: 10px solid skyblue;
+	text-align: center;
+}
+
+button {
+	width: 60px;
+	height: 30px;
+	margin: 20px auto;
+	border: 1px solid #d147a3;
+	border-radius: 5px;
+	background-color: white;
+}
+</style>
+</head>
+<body>
+	<div>
+		<h1>구구단(고전 이벤트 모델)</h1>
+		<button id="1">1단</button>
+		<button id="dan2">2단</button>
+		<button id="dan3">3단</button>
+		<button id="dan4">4단</button>
+		<button id="dan5">5단</button>
+		<button id="dan6">6단</button>
+		<button id="dan7">7단</button>
+		<button id="dan8">8단</button>
+		<button id="dan9">9단</button>
+		<output></output>
+		<script>
+			var target = document.getElementsByTagName("output")[0];
+			
+			var btn1 = document.getElementById("dan1");
+			btn.onclick = function dan1() {
+				for (var i = 1; i < 10; i++) {
+					target.innerHTML += ("<h3>" + 1 + " * " + i + " = " + 1 * i + "<h3>");
+				}
+			}
+			
+			var btn2 = document.getElementById("dan2");
+			btn.onclick = function dan2() {
+				for (var i = 1; i < 10; i++) {
+					target.innerHTML += ("<h3>" + 2 + " * " + i + " = " + 2 * i + "<h3>");
+				}
+			}
+		</script>
+	</div>
+</body>
+</html>

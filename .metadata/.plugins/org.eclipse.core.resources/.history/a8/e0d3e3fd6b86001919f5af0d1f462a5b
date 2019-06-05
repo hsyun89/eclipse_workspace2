@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단~~</title>
+<style>
+div {
+	width: 80%;
+	height: 100%;
+	margin: 20px auto;
+	text-align: center;
+	border: 1px solid blue;
+	text-align: center;
+}
+
+button {
+	width: 60px;
+	height: 30px;
+	margin: 20px auto;
+	padding-bottom 250px;
+	border: 1px solid #d147a3;
+	border-radius: 5px;
+	background-color: white;
+}
+</style>
+</head>
+<body>
+	<div>
+		<h1>구구단(인라인)</h1>
+		<button onclick="dan1()">1단</button>
+		<button onclick="dan2()">2단</button>
+		<button onclick="dan3()">3단</button>
+		<button onclick="dan4()">4단</button>
+		<button onclick="dan5()">5단</button>
+		<button onclick="dan6()">6단</button>
+		<button onclick="dan7()">7단</button>
+		<button onclick="dan8()">8단</button>
+		<button onclick="dan9()">9단</button>
+		<output></output>
+		<script>
+			var target = document.getElementsByTagName("output")[0];
+			function dan1() {
+				for (var i = 1; i < 10; i++) {
+					target.innerHTML += ("<br>" + "1 * " + i + " = " + 1 * i + "<br>");
+				}
+			}
+		</script>
+	</div>
+</body>
+</html>

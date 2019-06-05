@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Canvas API</title>
+<style>
+.button {
+	padding: 5px 10px;
+	margin: auto;
+	display: inline;
+	background: #777 repeat-x bottom;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	border-radius: 5px;
+	text-shadow: 1px 1px #666;
+	display: inline;
+}
+
+.button:active {
+	background-position: 0 top;
+	position: relative;
+	top: 1px;
+	padding: 6px 10px 4px;
+}
+</style>
+<script>
+	function initiate() {
+		var elem = document.getElementById('myCanvas');
+		var context = elem.getContext('2d');
+
+		//얼굴 1
+		context.beginPath();
+		context.translate(0, 0);
+		context.arc(300, 150, 100, 0, Math.PI * 2, true);
+		context.strokeStyle = "black";
+		context.lineWidth = "5";
+		context.lineCap = "round";
+		context.stroke();
+		context.fillStyle = "yellow";
+		context.fill();
+
+		//입
+		context.beginPath();
+		context.arc(300, 180, 30, 0, Math.PI, false);
+		context.strokeStyle = "black";
+		context.stroke();
+		context.fillStyle = "red";
+		context.fill();
+
+		//왼쪽눈
+		context.beginPath();
+		context.arc(260, 140, 20, 0, Math.PI, true);
+		context.strokeStyle = "black";
+		context.stroke();
+
+		//오른쪽눈
+		context.beginPath();
+		context.moveTo(320, 140);
+		context.bezierCurveTo(333, 120, 340, 150, 360, 140);
+		context.strokeStyle = "black";
+		context.stroke();
+
+		//코
+		context.beginPath();
+		context.lineJoin = "round";
+		context.moveTo(300, 150);
+		context.lineTo(310, 160);
+		context.lineTo(300, 170);
+		context.stroke();
+	}
+	window.addEventListener("load", initiate, false);
+</script>
+</head>
+<body>
+	<span class="button" onclick="saveItem()">저장하기</span>
+	<span class="button" onclick="removeItem()">삭제하기</span>
+	<span class="button" onclick="readItem()">읽어오기</span>
+
+	<section id="canvasbox">
+		<br>
+		<canvas id="myCanvas" width="600" height="300"
+			style="border: 1px solid black;">
+    </canvas>
+	</section>
+	<script>
+		var canvas = document.getElementById('myCanvas');
+		function saveItem() {
+			alert(canvas.toDataURL());
+			localStorage.setItem("canvas", canvas.toDataURL());
+		}
+
+
+		var context = canvas.getContext('2d');
+		function removeItem() {
+			context.clearRect(0, 0, 600, 300);
+		}
+
+/* 		var elem = document.getElementById('myCanvas');
+		var context = elem.getContext('2d'); */
+		function readItem() {
+			var img = new Image();
+			img.src = localStorage.getItem("canvas");
+			img.onload = function() {
+				context.drawImage(img, 0, 0);
+			}
+		}
+	</script>
+</body>
+</html>
+

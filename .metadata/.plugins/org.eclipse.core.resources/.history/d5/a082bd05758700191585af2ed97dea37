@@ -1,0 +1,26 @@
+package top;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int[] h = new int[] { 6, 9, 5, 7, 4 };
+		System.out.println(solution(h));
+	}
+
+	public static int[] solution(int[] heights) {
+		int[] answer = {};
+		int length = heights.length;
+		int idx[] = new int[length];
+		for (int i = 0; i < length; i++) {
+			idx[i] = i + 1;
+		}
+		int[] result = new int[length];
+		for (int i = length-1; i > 1; i--) {
+			if (heights[i - 1] > heights[i]) {
+				result[i] = idx[i-1];
+			}
+		}
+		answer = result;
+		return answer;
+	}
+}
