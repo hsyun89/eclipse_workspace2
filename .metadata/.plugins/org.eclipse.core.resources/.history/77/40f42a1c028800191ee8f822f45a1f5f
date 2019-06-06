@@ -41,7 +41,7 @@ public class Main {
 				int[] result = new int[] { 0, 0 };
 				answer = result;
 			}
- 
+
 			return answer;
 		}
 	}
