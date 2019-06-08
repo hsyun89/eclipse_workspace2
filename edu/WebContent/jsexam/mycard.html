@@ -55,15 +55,15 @@
 	<span class="button" onclick="removeItem()">삭제하기</span>
 	<span class="button" onclick="readItem()">읽어오기</span>
 	<br><br>
-	배경 컬러 설정 :  <input type="color" name="stcolor">
-	테두리 컬러 설정 : <input type="color" name="stcolor">
+	배경 컬러 설정 :  <input id="backColor" onchange="drawBack()" type="color">
+	테두리 컬러 설정 : <input id="lineColor" onchange="drawLine()" type="color">
 	<br><br>
-	메시지 컬러 설정 : <input type="color" name="stcolor">
-	입력 메시지 : <input type="text" name="stname" required>
+	메시지 컬러 설정 : <input id="msgColor" type="color" name="stcolor">
+	입력 메시지 : <input id="inputText" type="text" name="stname" required>
 	<br><br>
 	
 	<section id="dropbox">
-		<canvas id="canvas" width="600" height="600"></canvas>
+		<canvas onclick="writeText()" id="canvas" width="600" height="600"></canvas>
 	</section>
 	<section id="picturesbox">
 		<img id="image1" src="/edu/jsexam/bonobono/bn1.png" width="140" height="140">
@@ -140,6 +140,41 @@
 				canvas.drawImage(img, 0, 0);
 			}
 		}
+		function drawBack(){
+			  var elem = document.getElementById('canvas');  
+			  var x = document.getElementById("backColor");
+			  var ctx = elem.getContext('2d');  
+			  var defaultVal = x.defaultValue;
+			  var currentVal = x.value;
+			  
+			  ctx.fillStyle = x.value;  
+			  ctx.fillRect (0, 0, 600, 600);  
+		}
+		function drawLine(){
+			  var elem = document.getElementById('canvas');  
+			  var ctx = elem.getContext('2d');  
+			  var x = document.getElementById("lineColor");
+			  var defaultVal = x.defaultValue;
+			  var currentVal = x.value;
+			  
+			  ctx.strokeStyle = x.value;  
+			  ctx.lineWidth = 50;
+			  ctx.strokeRect (0, 0, 600, 600);  
+		}
+		function writeText(){
+			  var elem = document.getElementById('canvas');  
+			  var ctx = elem.getContext('2d');  
+			  var mColor = document.getElementById("msgColor");
+			  var iText = document.getElementById("inputText");
+			  
+			  var x = event.clientX;
+			  var y = event.clientY;
+			 
+			  ctx.fillStyle = mColor.value; 
+			  ctx.font = "20px Georgia";
+			  ctx.fillText(iText.value, x-15, y-125);
+		}
+
 	</script>
 </body>
 </html>
