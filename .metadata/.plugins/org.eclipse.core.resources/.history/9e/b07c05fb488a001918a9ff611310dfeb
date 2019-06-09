@@ -127,7 +127,7 @@
 		window.addEventListener('load', initiate, false);
 
 		function saveItem() {
-			//alert(drop.toDataURL());
+			alert(drop.toDataURL());
 			localStorage.setItem("canvas", drop.toDataURL());
 		}
 		function removeItem() {
@@ -167,8 +167,8 @@
 			  var mColor = document.getElementById("msgColor");
 			  var iText = document.getElementById("inputText");
 			  
-			  var x = event.pageX-elem.offsetLeft;
-			  var y = event.pageY-elem.offsetTop;
+			  var x = event.pageX;
+			  var y = event.pageY;
 			 
 			  ctx.fillStyle = mColor.value; 
 			  ctx.font = "20px Georgia";
