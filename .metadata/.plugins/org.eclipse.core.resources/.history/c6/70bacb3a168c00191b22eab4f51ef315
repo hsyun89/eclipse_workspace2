@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML 학습</title>
+<style>
+div.grad1 {
+	width: 100%;
+	height: 100px;
+	margin-bottom: 10px;
+	background-image: linear-gradient(170deg, skyblue, pink);
+	text-align: center;
+}
+
+div.round1 {
+	width: 90%;
+	height: 100%;
+	margin: 20px auto;
+	padding: 10px;
+	border: 1px dotted #d147a3;
+	border-radius: 20px;
+}
+
+div.middleImage {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.footer {
+	text-align: center;
+	width: 100%;
+	height: 30px;
+	background-color: pink;
+}
+
+span.link {
+	margin-right: 40px;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th {
+	background-color: pink;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	font-weight: bold;
+}
+
+img:hover {
+	opacity: 0.5;
+}
+
+.button {
+	padding: 5px 10px;
+	margin: auto;
+	display: inline;
+	background: #777 repeat-x bottom;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	border-radius: 5px;
+	text-shadow: 1px 1px #666;
+	display: inline;
+}
+
+.button:active {
+	background-position: 0 top;
+	position: relative;
+	top: 1px;
+	padding: 6px 10px 4px;
+}
+
+#dropbox {
+	float: left;
+	width: 500px;
+	height: 500px;
+	margin: 10px;
+	border: 1px solid #999999;
+}
+
+#picturesbox {
+	float: left;
+	width: 500px;
+	height: 500px;
+	margin: 10px;
+	border: 1px solid #999999;
+}
+
+#picturesbox>img {
+	float: left;
+	padding: 5px;
+}
+
+#clear{
+clear: left;
+}
+
+/* figure{
+margin: 0;
+} */
+</style>
+</head>
+<body style="font-family: 맑은 고딕">
+
+	<header>
+
+		<div class="grad1">
+			<div style="text-shadow: 3px 3px 3px white">
+				<h1 id="header">HTML 학습</h1>
+			</div>
+			<nav>
+				<span class="link"><a href="http://www.w3.org/">W3C</a></span><span
+					class="link"> <a href="http://www.w3schools.com/">W3CSCHOOLS</a></span>
+				<a href="https://www.w3schools.com/jquery/">jQuery</a>
+			</nav>
+		</div>
+
+
+	</header>
+
+	<section>
+
+		<article>
+			<div class="round1">
+				<h2 style="color: pink">나의 소개</h2>
+				<ul>
+					<li>이름 : 윤현수</li>
+					<li>별명 : 사장님</li>
+					<li>관심기술 : HTML5</li>
+					<li>취미 : 미식축구</li>
+				</ul>
+			</div>
+		</article>
+
+		<article>
+			<div class="round1">
+				<h2 style="color: pink">
+					올해 <span style="color: skyblue">재미있게</span> 읽은 책
+				</h2>
+				<table border="1">
+					<tr>
+						<th>제목</th>
+						<th>장르</th>
+					</tr>
+					<tr>
+						<td>자바의 정석</td>
+						<td>스릴러</td>
+					</tr>
+					<tr>
+						<td>Do it! 오라클로 배우는 데이터베이스 입문 비전공자도 기초부터 확실하게!</td>
+						<td>로맨스</td>
+					</tr>
+					<tr>
+						<td>한 권으로 끝내는 실무 Java 웹 개발서</td>
+						<td>바이블</td>
+					</tr>
+				</table>
+			</div>
+		</article>
+
+		<article>
+			<div class="round1">
+				<h2 style="color: pink">
+					자랑하고싶은 <span style="color: skyblue">우리동네</span>의 아름다운 곳
+				</h2>
+				버닝썬은 2015년 10월 23일 그랜드오픈을 하였으며, 주된 플레이리스트는 메인스트림 EDM, 지역 클러버들에게 사랑받는
+				강남클럽이다. 특 1급 호텔 내에 위치한 부티나는 위치 특성상 다른 클럽과 비교해도 외국인과 유학생들을 많이 볼 수 있다.
+				금요일과 토요일에 영업하며 클럽 내부는 메인 스테이지가 위치한 1층과 VIP 전용인 2층으로 구성되어 있다. 2019년
+				2월 16일을 마지막으로 버닝썬 영업을 종료하였다.
+				<div class="middleImage">
+					<figure>
+						<img width="60%" src="/edu/cssexam/burningsun.jpg">
+						<figcaption>불타다 못해 사라졌다.</figcaption>
+					</figure>
+				</div>
+			</div>
+		</article>
+
+	</section>
+
+	<aside style="width: 60%; margin: auto;">
+		<!-- 		<div align="center" style="position: relative">
+			<iframe width="640" height="360"
+				src="https://www.youtube.com/embed/MtW75y4kEfY" frameborder="0"
+				allowfullscreen=""></iframe>
+		</div> -->
+		<div
+			style="position: relative; max-width: 100%; padding-bottom: 56.25%; height: 0;">
+			<iframe width="320" height="180"
+				src="https://www.youtube.com/embed/MtW75y4kEfY" frameborder="0"
+				allowfullscreen=""
+				style="position: absolute; position: absolute; top: 0; left: 0%; width: 100%; height: 100%;"></iframe>
+		</div>
+	</aside>
+
+	<div style="width: 90%; margin: 20px auto;">
+		<h1>HTML5로 크리스마스 카드 만들기</h1>
+		<span class="button" onclick="saveItem()">저장하기</span> <span
+			class="button" onclick="removeItem()">삭제하기</span> <span
+			class="button" onclick="readItem()">읽어오기</span> <br> <br>
+		배경 컬러 설정 : <input id="backColor" onchange="drawBack()" type="color">
+		테두리 컬러 설정 : <input id="lineColor" onchange="drawLine()" type="color">
+		<br> <br> 메시지 컬러 설정 : <input id="msgColor" type="color"
+			name="stcolor"> 입력 메시지 : <input id="inputText" type="text"
+			name="stname" required> <br> <br>
+
+		<section id="dropbox">
+			<canvas onclick="writeText()" id="canvas" width="500" height="500"></canvas>
+		</section>
+		<section id="picturesbox">
+			<img id="image1" src="/edu/jsexam/bonobono/bn1.png" width="100"
+				height="100"> <img id="image2"
+				src="/edu/jsexam/bonobono/bn2.png" width="100" height="100"> <img
+				id="image3" src="/edu/jsexam/bonobono/bn3.png" width="100"
+				height="100"> <img id="image4"
+				src="/edu/jsexam/bonobono/bn4.png" width="100" height="100"> <img
+				id="image5" src="/edu/jsexam/bonobono/bn5.png" width="100"
+				height="100"> <img id="image6"
+				src="/edu/jsexam/bonobono/bn6.png" width="100" height="100"> <img
+				id="image7" src="/edu/jsexam/bonobono/bn7.png" width="100"
+				height="100"> <img id="image8"
+				src="/edu/jsexam/bonobono/bn8.png" width="100" height="100"> <img
+				id="image9" src="/edu/jsexam/bonobono/bn9.png" width="100"
+				height="100"> <img id="image10"
+				src="/edu/jsexam/bonobono/bn10.png" width="100" height="100">
+			<img id="image11" src="/edu/jsexam/bonobono/bn11.png" width="100"
+				height="100"> <img id="image12"
+				src="/edu/jsexam/bonobono/bn12.png" width="100" height="100">
+			<img id="image13" src="/edu/jsexam/bonobono/bn13.png" width="100"
+				height="100"> <img id="image14"
+				src="/edu/jsexam/bonobono/bn14.png" width="100" height="100">
+			<img id="image15" src="/edu/jsexam/bonobono/bn15.png" width="100"
+				height="100"> <img id="image16"
+				src="/edu/jsexam/bonobono/bn16.png" width="100" height="100">
+		</section>
+	</div>
+<div id="clear">
+</div>
+	<footer>
+		<div class="footer">
+			<i> 이 문서는 윤현수에 의해 HTML5와 CSS3 기술을 사용하여 2019년 5월 27일에 작성하였습니다.(ver
+				1.0) </i>
+		</div>
+	</footer>
+
+	<script>
+		////////////////////////////////////////////////////////날씨이미지 만들기
+		var header1 = document.getElementById("header");
+		window.onload = function() {
+			var request = new XMLHttpRequest();
+			//readystate값이 변경될 때마다 수행
+			request.onreadystatechange = function() {
+				//alert(request.readyState);
+				if (request.readyState == 4) {
+					if (request.status == 200) {
+						var str = request.responseText;
+						//alert(str);
+						var jsObj = JSON.parse(str);
+						var output = "";
+						output += "<img src=/edu/"+ jsObj["img"]+" width = 50>";
+						header1.innerHTML += output;
+					}
+				}
+			}
+			//Ajax 요청  // true : 비동기요청??
+			request.open("GET", "/edu/ajaxexam/content/weather.jsp", true);
+			request.send();
+		}
+		//////////////////////////////////////////////////////////카드만들기
+		var canvas, drop;
+		function initiate() {
+			var images = document.querySelectorAll('#picturesbox > img');
+			for (var i = 0; i < images.length; i++) {
+				images[i].addEventListener('dragstart', dragged, false);
+				images[i].addEventListener('dragend', ending, false);
+			}
+
+			drop = document.getElementById('canvas');
+			canvas = drop.getContext('2d');
+
+			drop.addEventListener('dragover', function(e) {
+				e.preventDefault();
+			}, false);
+			drop.addEventListener('drop', dropped, false);
+		}
+		function ending(e) {
+			elem = e.target;
+			//elem.style.visibility='hidden';
+			//elem.style.display='none';
+			//elem.parentNode.removeChild(elem);
+		}
+		function dragged(e) {
+			var elem = e.target;
+			e.dataTransfer.setData('aa', elem.getAttribute('id'));
+			e.dataTransfer.setDragImage(e.target, 0, 0);
+		}
+		function dropped(e) {
+			e.preventDefault();
+			var id = e.dataTransfer.getData('aa');
+			var elem = document.getElementById(id);
+
+			var posx = e.pageX - drop.offsetLeft;
+			var posy = e.pageY - drop.offsetTop;
+
+			canvas.drawImage(elem, posx, posy, 100, 100);
+
+		}
+		window.addEventListener('load', initiate, false);
+
+		function saveItem() {
+			//alert(drop.toDataURL());
+			localStorage.setItem("canvas", drop.toDataURL());
+		}
+		function removeItem() {
+			canvas.clearRect(0, 0, 500, 500);
+		}
+		function readItem() {
+			var img = new Image();
+			img.src = localStorage.getItem("canvas");
+			img.onload = function() { //이미지를 완전히 받았을 때 실행(동기처리)
+				canvas.drawImage(img, 0, 0);
+			}
+		}
+		function drawBack() {
+			var elem = document.getElementById('canvas');
+			var ctx = elem.getContext('2d');
+			var x = document.getElementById("backColor");
+			var defaultVal = x.defaultValue;
+			var currentVal = x.value;
+
+			ctx.fillStyle = x.value;
+			ctx.fillRect(0, 0, 500, 500);
+		}
+		function drawLine() {
+			var elem = document.getElementById('canvas');
+			var ctx = elem.getContext('2d');
+			var x = document.getElementById("lineColor");
+			var defaultVal = x.defaultValue;
+			var currentVal = x.value;
+
+			ctx.strokeStyle = x.value;
+			ctx.lineWidth = 50;
+			ctx.strokeRect(0, 0, 600, 600);
+		}
+		function writeText() {
+			var elem = document.getElementById('canvas');
+			var ctx = elem.getContext('2d');
+			var mColor = document.getElementById("msgColor");
+			var iText = document.getElementById("inputText");
+
+			var x = event.pageX - elem.offsetLeft;
+			var y = event.pageY - elem.offsetTop;
+
+			ctx.fillStyle = mColor.value;
+			ctx.font = "20px Georgia";
+			ctx.fillText(iText.value, x, y);
+		}
+	</script>
+</body>
+</html>

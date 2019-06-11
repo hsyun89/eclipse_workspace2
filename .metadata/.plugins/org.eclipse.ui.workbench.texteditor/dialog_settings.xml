@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="535" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="540"/>
 			<item value="myCanvas"/>
 			<item value="canvas"/>
 			<item value="linew"/>
@@ -19,9 +20,9 @@
 			<item value="objA[1]"/>
 			<item value="Member5"/>
 			<item value="Member2"/>
-			<item value="b"/>
 		</list>
 		<list key="replacehistory">
+			<item value="535"/>
 			<item value="Otab"/>
 			<item value="proArr[4]"/>
 			<item value="Member4"/>
@@ -29,7 +30,6 @@
 			<item value="bookArr"/>
 			<item value="Member3"/>
 			<item value="objA[2]"/>
-			<item value="objA[1]"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
