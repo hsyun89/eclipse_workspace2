@@ -1,0 +1,38 @@
+package boggle;
+
+public class Main {
+
+	static int length=0;
+	public static void main(String[] args) {
+		String[][] input = new String[][] { 
+			 { "N", "N", "N", "N", "S" }
+			, { "N", "E", "E", "E", "N" }
+			, { "N", "E", "Y", "E", "N" }
+			, { "N", "E", "E", "E", "N" }
+			, { "N", "N", "N", "N", "N" } };
+		String word = "YES";
+		//System.out.println(word.substring(1));
+		length = word.length(); //3
+		System.out.println(hasWord(2,2,word));
+	}
+	static boolean hasWord(int x, int y, String word) {
+		String[][] input = new String[][] { 
+			 { "N", "N", "N", "N", "S" }
+			, { "N", "E", "E", "E", "N" }
+			, { "N", "E", "Y", "E", "N" }
+			, { "N", "E", "E", "E", "N" }
+			, { "N", "N", "N", "N", "N" } };
+		//글자가 없다면 false
+		if(!input[x][y].equals(word.substring(0,1))) {
+			return false;
+		}
+		else {
+			//있는데 마지막 true
+			if(word.length()==1) {
+				return true;
+			}
+			//있는데 더 있으면 재귀
+			return hasWord(x-1,x+1,word.substring(1));
+		}
+	}
+}

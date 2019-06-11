@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="388" key="DIALOG_X_ORIGIN"/>
+		<item value="5" key="DIALOG_X_ORIGIN"/>
 		<item value="182" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="EditorSelectionDialog">
@@ -15,26 +15,22 @@
 		<list key="textEntries">
 			<item value="1"/>
 			<item value="1"/>
-			<item value="1"/>
 			<item value="3"/>
 			<item value="2"/>
 		</list>
 		<list key="orderedElements">
-			<item value="org.eclipse.ui.edit.findReplace"/>
 			<item value="org.eclipse.ui.preferencePages.FileEditors"/>
 			<item value="org.eclipse.wst.jsdt.ui.preferences.CodeAssistPreferencePage"/>
 			<item value="org.eclipse.ui.browser.view"/>
 			<item value="org.eclipse.ui.browser.preferencePage"/>
 		</list>
 		<list key="orderedProviders">
-			<item value="org.eclipse.ui.commands"/>
 			<item value="org.eclipse.ui.preferences"/>
 			<item value="org.eclipse.ui.preferences"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 			<item value="org.eclipse.ui.preferences"/>
 		</list>
 		<list key="textArray">
-			<item value="replace"/>
 			<item value="file asso"/>
 			<item value="auto ac"/>
 			<item value="web bro"/>
