@@ -10,10 +10,10 @@
                 //var value = $('select > option:selected').val();
                 var value = $('#valtest').val();
                 alert(value);
-                $('#valtest').val('ㅋㅋㅋㅋㅋ');
-               /*  $('#valtest').val(function(p1, p2) {
-                	return p1+"hahaha";
-                }); */
+                //$('#valtest').val('ㅋㅋㅋㅋㅋ');
+                 $('#valtest').val(function(p1, p2) {
+                	return p1+":"+p2+"hahaha";
+                }); 
             }, 5000);
         });
     </script>
@@ -26,7 +26,7 @@
         <option>Dog</option>
         <option>Elephant</option>
     </select>
-    <input id="valtest" type="text">
+    <input id="valtest" type="text" value="난 디폴트 값이야.">
 </body>
 </html>
 

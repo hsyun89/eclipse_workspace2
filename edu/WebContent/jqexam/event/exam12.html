@@ -1,18 +1,18 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <script src="http://code.jquery.com/jquery-1.7.js"></script>
     <script>
         $(document).ready(function () {
             $('#my_form').submit(function (event) {
-                // ì…ë ¥ ì–‘ì‹ì˜ valueë¥¼ ê°€ì ¸ì˜µë‹ˆë‹¤.
+                // ÀÔ·Â ¾ç½ÄÀÇ value¸¦ °¡Á®¿É´Ï´Ù.
                 var name = $('#name').val();
                 var password = $('#password').val();
 
-                // ì¶œë ¥í•©ë‹ˆë‹¤.
+                // Ãâ·ÂÇÕ´Ï´Ù.
                 alert(name + ' : ' + password);
 
-                // ê¸°ë³¸ ì´ë²¤íŠ¸ë¥¼ ì œê±°í•©ë‹ˆë‹¤.
+                // ±âº» ÀÌº¥Æ®¸¦ Á¦°ÅÇÕ´Ï´Ù.
                 event.preventDefault();
             });
         });
@@ -23,15 +23,15 @@
     <form id="my_form" action="not.jsp">
         <table>
             <tr>
-                <td>ì´ë¦„: </td>
+                <td>ÀÌ¸§: </td>
                 <td><input type="text" name="name" id="name"/></td>
             </tr>
             <tr>
-                <td>ë¹„ë°€ë²ˆí˜¸: </td>
+                <td>ºñ¹Ğ¹øÈ£: </td>
                 <td><input type="password" name="password" id="password"/></td>
             </tr>
         </table>
-        <input type="submit" value="ì œì¶œ"/>
+        <input type="submit" value="Á¦Ãâ"/>
     </form>
 </body>
 </html>

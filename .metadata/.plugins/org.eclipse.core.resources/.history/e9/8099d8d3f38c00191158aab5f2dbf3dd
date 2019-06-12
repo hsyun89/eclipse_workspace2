@@ -1,0 +1,34 @@
+package moigosa;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int[] answer = new int[] { 1, 2, 3, 4, 5 };
+		for(int data : solution(answer)) {
+			System.out.println(data);
+		}
+	}
+	public static int[] solution(int[] answers) {
+		int[] answer = {};
+		
+		//1번 수포자의 답지 생성
+		int[] answer1 = new int[answer.length];
+		for(int i = 0; i<answer.length;i++) {
+			answer1[i]=i%5+1;
+		}
+		
+		//2번 수포자의 답지 생성
+		int[] answer2 = new int[answer.length];
+		for(int i = 0; i<answer.length;i++) {
+			answer2[i]=i+1;
+		}
+		
+		//3번 수포자의 답지 생성
+		int[] answer3 = new int[answer.length];
+		for(int i = 0; i<answer.length;i++) {
+			answer3[i]=i+1;
+		}
+		
+		return answer1;
+	}
+}

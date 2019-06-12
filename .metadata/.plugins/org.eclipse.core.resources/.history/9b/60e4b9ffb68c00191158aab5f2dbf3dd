@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script>
+    var fullDate = new Date();
+    var day = fullDate.getDay();
+	var weekday = new Array("일","월","화","수","목","금","토");
+    //document.write("<h1>오늘은 "+weekday[day]+"요일입니다.</h1>");
+
+	$(document).ready(function() {
+		$('#target').text(weekday[day]);
+		setInterval(function() {
+					$('#target').text(weekday[day]);
+		}, 2000);
+	});
+    </script>
+</head>
+<body>
+			<h1>오늘은 <output id="target"></output>요일입니다.</h1>
+</body>
+</html>

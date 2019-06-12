@@ -12,6 +12,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="p1"/>
 			<item value="540"/>
 			<item value="myCanvas"/>
 			<item value="canvas"/>
@@ -19,7 +20,6 @@
 			<item value="Ltab"/>
 			<item value="objA[1]"/>
 			<item value="Member5"/>
-			<item value="Member2"/>
 		</list>
 		<list key="replacehistory">
 			<item value="535"/>

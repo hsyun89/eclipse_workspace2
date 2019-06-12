@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <img src="Chrysanthemum.jpg"/>
+    <img src="Desert.jpg"/>
+    <img src="Hydrangeas.jpg"/>
+    <img src="Jellyfish.jpg"/>
+    <img src="Koala.jpg"/>
+</body>
+</html>
