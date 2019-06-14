@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Query 추출 실습</h1><hr>
+	<form method="get" action="/sedu/querytest">
+		이름 : <input name="name" value= "듀크" required ><br> 
+		암호 : <input type="password" name="pass" required><br>
+		나이 : <input type="number" name="age" required><br>
+		
+		성별 : 남<input type="radio" name="sex" value="남">
+		여<input type="radio" name="sex" value="여"><br>
+		
+		취미 : 피아노<input type="checkbox" name="hobby" value="피아노">
+		수영<input type="checkbox" name="hobby" value="수영">
+		독서<input type="checkbox" name="hobby" value="독서">
+		게임<input type="checkbox" name="hobby" value="게임"><br>
+		
+		좋아하는 색 : <select name="color">
+		<option></option>
+		<option>빨강</option>
+		<option>노랑</option>
+		<option>파랑</option>
+		<option>초록</option>
+		<option>검정</option>
+		<option>흰</option>
+		</select><br>
+		
+		좋아하는 음식<br><select name="food" multiple>
+		<option>라면</option>
+		<option>냉면</option>
+		<option>짜장면</option>
+		<option>햄버거</option>
+		<option>피자</option>
+		<option>치킨</option>
+		</select><br>
+		의견 : <br>
+		<textarea name = "memo" rows="20" cols="50"></textarea><br>
+		<input type="hidden" name="s1" value="1234">
+		<input type="hidden" name="s2" value="비밀이야">
+		
+		<input type="submit">
+		<input type="reset">
+	</form>
+</body>
+</html>
