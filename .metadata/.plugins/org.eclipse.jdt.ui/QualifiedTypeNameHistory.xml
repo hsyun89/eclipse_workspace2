@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="mobile.Mobile"/>
 <fullyQualifiedTypeName name="mobile.MobileTest"/>
 <fullyQualifiedTypeName name="day10.LottoMachine"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
@@ -20,4 +19,6 @@
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Alert"/>
 </qualifiedTypeNameHistroy>

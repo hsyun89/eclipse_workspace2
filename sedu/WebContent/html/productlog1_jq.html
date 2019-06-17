@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+img{
+border: 1px solid grey;
+margin:15px;
+box-shadow: 8px 8px 5px grey;
+}
+</style>
+</head>
+<body>
+<h3>원하는 상품을 클릭해 주세요!! 마구마구^^<output id="result"></output></h3>
+<hr>
+<a onclick="requestAjax('p001');"><img src="/edu/images/creatine/c1.jpg" width=200></a>
+<a onclick="requestAjax('p002');"><img src="/edu/images/creatine/c2.jpg"width=200></a>
+<a onclick="requestAjax('p003');"><img src="/edu/images/creatine/c3.png"width=200></a>
+<a onclick="requestAjax('p004');"><img src="/edu/images/creatine/c4.jpg"width=200></a>
+<a onclick="requestAjax('p005');"><img src="/edu/images/creatine/c5.jpg"width=200></a><br>
+<a onclick="requestAjax('p006');"><img src="/edu/images/creatine/c6.jpg"width=200></a>
+<a onclick="requestAjax('p007');"><img src="/edu/images/creatine/c7.jpg"width=200></a>
+<a onclick="requestAjax('p008');"><img src="/edu/images/creatine/c8.jpg"width=200></a>
+<a onclick="requestAjax('p009');"><img src="/edu/images/creatine/c9.jpg"width=200></a>
+<a onclick="requestAjax('p010');"><img src="/edu/images/creatine/c10.jpg"width=200></a>
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script>
+function requestAjax(id){
+	$.getJSON("/sedu/basket1?pid"+id, function(jsonDom){
+		$('output').each(function(index, dom)){
+			$(dom).text(jsonDom.pid);	
+		});
+	});
+}
+</script>
+</body>
+</html>

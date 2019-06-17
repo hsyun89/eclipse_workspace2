@@ -30,6 +30,7 @@ public class MoveServlet extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 		out.print("<h2>전달된 쿼리 문자열이 없어서 MoveServlet이 직접 응답합니당...</h2>");
+		out.close();
 	}
 
 }
