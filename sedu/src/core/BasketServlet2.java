@@ -22,16 +22,16 @@ public class BasketServlet2 extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 		// 세션
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession();  //세션객체 준비, 이미 있으면 가져옴, 없는데 만들지는 않는다.
 		if (session.getAttribute("data") == null)
 			session.setAttribute("data", new int[10]);
-		int[] data = (int[]) session.getAttribute("data");
-		
-		//삭제인경우
+		int[] data = (int[]) session.getAttribute("data");  //세션에 준비된 배열의 주소값을 가져감
+
+		// 삭제인경우
 		if (pid.equals("remove")) {
 			session.invalidate();
-			out.print("상품이 삭제되었습니다.");
-			out.print("<a href= http://localhost:8000/sedu/html/productlog2.html >상품선택화면 </a>");
+			out.print("상품이 삭제되었습니다.<br>");
+			out.print("<a href= http://70.12.113.172:8000/sedu/html/productlog2.html >상품선택화면 </a>");
 		} else {
 			for (int i = 0; i < 9; i++) {
 				if (pid.equals("p00" + (i + 1))) {
@@ -45,11 +45,18 @@ public class BasketServlet2 extends HttpServlet {
 			// 출력
 			out.print("<h2>선택한 상품 리스트</h2><hr>");
 			for (int i = 0; i < 9; i++) {
-				out.print("<ul><li>pid00" + (i + 1) + "상품 " + data[i] + "개</li></ul>");
+				if (data[i] != 0) {
+					out.print("<ul><li>p00" + (i + 1) + "상품 " + data[i] + "개</li></ul>");
+				}
 			}
-			out.print("<ul><li>pid010상품 " + data[9] + "개</li></ul>");
-			out.print("<a href= http://localhost:8000/sedu/html/productlog2.html >상품선택화면 </a>");
-			out.print("<a href= /sedu/basket2?pid=remove>상품비우기</a>");
+			if (data[9] != 0) {
+				out.print("<ul><li>p010상품 " + data[9] + "개</li></ul>");
+			}
+			//out.print("<a href= http://70.12.113.172:8000/sedu/html/productlog2.html >상품선택화면</a>");
+			out.print("<a href= "+request.getHeader("referer")+" >상품선택화면</a>");
+			out.print("&nbsp&nbsp&nbsp&nbsp&nbsp");
+			out.print("<a href= http://70.12.113.172:8000/sedu/basket2?pid=remove>상품비우기</a>");
 		}
+		out.close();
 	}
 }
