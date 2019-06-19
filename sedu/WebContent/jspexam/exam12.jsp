@@ -8,8 +8,8 @@
 </head>
 <body>
 <h2>include 지시자와 액션태그 비교</h2>
-<%-- <hr>
-<%@ include file="date.jsp" %>
+<hr>
+<%-- <%@ include file="date.jsp" %>
 <hr>
 <%@ include file="date.jsp" %> --%>
 <hr>
