@@ -22,4 +22,5 @@
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="javafx.scene.control.Alert"/>
 <fullyQualifiedTypeName name="vo.MyDataVO"/>
+<fullyQualifiedTypeName name="vo.MemberVO"/>
 </qualifiedTypeNameHistroy>
