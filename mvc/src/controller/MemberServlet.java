@@ -1,4 +1,4 @@
-package controller;
+ï»¿package controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -24,25 +24,25 @@ public class MemberServlet extends HttpServlet {
 		String pass = request.getParameter("pass");
 
 		if (name.equals("")) {
-			vo.setName("¾øÀ½");
+			vo.setName("ì—†ìŒ");
 		} else {
 			vo.setName(name);
 		}
 
 		if (phone.equals("")) {
-			vo.setPhone("¾øÀ½");
+			vo.setPhone("ì—†ìŒ");
 		} else {
 			vo.setPhone(phone);
 		}
 
 		if (id.equals("")) {
-			vo.setId("¾øÀ½");
+			vo.setId("ì—†ìŒ");
 		} else {
 			vo.setId(id);
 		}
 
 		if (pass.equals("")) {
-			vo.setPass("¾øÀ½");
+			vo.setPass("ì—†ìŒ");
 		} else {
 			vo.setPass(pass);
 		}

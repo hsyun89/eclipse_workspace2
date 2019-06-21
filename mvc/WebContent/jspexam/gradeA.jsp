@@ -12,5 +12,9 @@
 	  	String name = request.getParameter("name");
 	%>
 	<h1><%= name %>님은 <%= grade%>등급입니다. 우수한 성적이네요^^</h1>
+	
+	<hr>
+	
+	<h1>${param.name }님은 ${grade }등급입니다. 우수한 성적이네요^^</h1>
 </body>
 </html>

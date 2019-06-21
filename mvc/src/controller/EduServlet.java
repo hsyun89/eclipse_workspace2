@@ -1,4 +1,4 @@
-package controller;
+﻿package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,7 +16,7 @@ public class EduServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//��ȯ
+		//변환
 		request.setCharacterEncoding("UTF-8");
 
 		int avg = Integer.parseInt(request.getParameter("avg"));

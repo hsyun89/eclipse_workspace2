@@ -1,4 +1,4 @@
-package controller;
+ï»¿package controller;
 
 import java.io.IOException;
 
@@ -25,7 +25,7 @@ public class ProductServlet extends HttpServlet {
 		if(pid.equals("remove")) {
 			session.invalidate();
 			request.getRequestDispatcher("/jspexam/productView2.jsp").forward(request, response);
-			return; //¸®ÅÏÀ» ÇØÁà¾ß ¿©±â¼­ ³¡³­´Ù.
+			return; //ë¦¬í„´ì„ í•´ì¤˜ì•¼ ì—¬ê¸°ì„œ ëë‚œë‹¤.
 		}else{
 			
 			if(pid.equals("p001")) {
