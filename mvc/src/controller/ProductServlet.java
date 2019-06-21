@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import vo.ProductVO;
+import model.vo.ProductVO;
 
 @WebServlet("/productservlet1")
 public class ProductServlet extends HttpServlet {

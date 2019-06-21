@@ -1,4 +1,4 @@
-package vo;
+package model.vo;
 
 public class VisitorVO {
 	private String name;

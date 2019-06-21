@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import vo.ProductVO;
+import model.vo.ProductVO;
 
 @WebServlet("/calcservlet1")
 public class CalcServlet extends HttpServlet {

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="vo.MemberVO"%>
+<%@ page import="model.vo.MemberVO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +22,7 @@
 
 	<hr>
 
-	<jsp:useBean id="data" class="vo.MemberVO" scope="request"></jsp:useBean>
+	<jsp:useBean id="data" class="model.vo.MemberVO" scope="request"></jsp:useBean>
 	<h1>회원 정보(액션 태그)</h1>
 	<hr>
 	<ul>

@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import vo.MemberVO;
+import model.vo.MemberVO;
 
 @WebServlet("/memberservlet1")
 public class MemberServlet extends HttpServlet {
