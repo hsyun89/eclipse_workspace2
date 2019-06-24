@@ -6,14 +6,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+td {
+	border-bottom: 1px dotted red;
+}
+
+tr:hover {
+	background-color: pink;
+	font-weight: bold;
+}
+td:nth-child(3){
+	width: 400px;
+}
+</style>
 </head>
 <body>
 	<%
 		ArrayList<VisitorVO> list = (ArrayList<VisitorVO>) request.getAttribute("list");
 		if (list != null) {
 	%>
-	<h2>방명록 글 리스트</h2>
-	<table border="1">
+	<h2>방명록 글 리스트</h2><hr>
+	<table>
 		<%
 			for (VisitorVO vo : list) {
 		%>
@@ -21,6 +34,7 @@
 			<td><%=vo.getName()%></td>
 			<td><%=vo.getWriteDate()%></td>
 			<td><%=vo.getMemo()%></td>
+			<td><a href='/mvc/visitor?id=<%=vo.getId()%>'><img src="/mvc/images/delete.png" width="30"></a></td>
 		</tr>
 		<%
 			}
@@ -33,5 +47,9 @@
 	<%
 		}
 	%>
+	<hr>
+	<a href="<%=request.getHeader("referer")%>">방명록 홈 화면으로 가기</a>
+	<br>
+	<a href='  ${header.referer}'>방명록 홈 화면으로 가기</a>
 </body>
 </html>

@@ -9,7 +9,6 @@
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
@@ -27,4 +26,5 @@
 <fullyQualifiedTypeName name="java.sql.Statement"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="vo.VisitorVO"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
