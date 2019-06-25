@@ -6,12 +6,14 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="MeetingVO" key="selection"/>
+		<item value="News" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Meeting"/>
+			<item value="list"/>
 			<item value="VisitorVO"/>
 			<item value="json"/>
 			<item value="hobby"/>
@@ -25,6 +27,7 @@
 			<item value="objA[1]"/>
 		</list>
 		<list key="replacehistory">
+			<item value="News"/>
 			<item value="MeetingVO"/>
 			<item value="food"/>
 			<item value="getpost"/>
@@ -41,7 +44,7 @@
 		<item value="288" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="390" key="DIALOG_HEIGHT"/>
-		<item value="78" key="DIALOG_X_ORIGIN"/>
-		<item value="231" key="DIALOG_Y_ORIGIN"/>
+		<item value="613" key="DIALOG_X_ORIGIN"/>
+		<item value="114" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

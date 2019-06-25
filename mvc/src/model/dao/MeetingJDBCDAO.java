@@ -23,7 +23,7 @@ public class MeetingJDBCDAO implements MeetingDAO {
 				("jdbc:oracle:thin:@localhost:1521:xe", "jdbctest", "jdbctest");
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery
-				("select id,name, title, to_char(meetingdate, 'yyyy\"년\" mm\"월\" dd\"일\" PM hh\"시\" mi\"분\" ') dayday from meeting order by dayday");) {
+				("select id,name, title, to_char(meetingdate, 'yyyy\"년\" mm\"월\" dd\"일\" PM hh24\"시\" mi\"분\" ') dayday from meeting order by dayday");) {
 			MeetingVO vo;
 			while(rs.next()) {
 				vo = new MeetingVO();
@@ -49,7 +49,7 @@ public class MeetingJDBCDAO implements MeetingDAO {
 				("jdbc:oracle:thin:@localhost:1521:xe", "jdbctest", "jdbctest");
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery
-				("select id, name, title, to_char(meetingdate,'yyyy\"년\" mm\"월\" dd\"일\" PM hh\"시\" mi\"분\" ') dayday "
+				("select id, name, title, to_char(meetingdate,'yyyy\"년\" mm\"월\" dd\"일\" PM hh24\"시\" mi\"분\" ') dayday "
 						+"from meeting where title like '%"+keyword+"%' order by dayday");) {
 			MeetingVO vo;
 			while(rs.next()) {
@@ -117,7 +117,7 @@ public class MeetingJDBCDAO implements MeetingDAO {
 		try (Connection conn = DriverManager.getConnection
 				("jdbc:oracle:thin:@localhost:1521:xe", "jdbctest", "jdbctest");
 				PreparedStatement pstmt = conn.prepareStatement(
-						"update meeting set name =?, title =?, meetingdate = to_date(?,'yyyy-mm-dd\"T\"hh24:mi'), where id=?");) {
+						"update meeting set name =?, title =?, meetingdate = to_date(?,'yyyy-mm-dd\"T\"hh24:mi') where id=?");) {
 			pstmt.setString(1, vo.getName());
 			pstmt.setString(2,  vo.getTitle());
 			pstmt.setString(3,  vo.getMeetingDate());
