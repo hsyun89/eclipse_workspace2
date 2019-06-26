@@ -12,7 +12,7 @@ public class NewsDAOtest {
 	public void test() {
 		NewsDAO dao = new NewsDAO();
 		NewsVO vo = new NewsVO();
-		vo.setWriter("도우너");
+		vo.setWriter("도우너dd");
 		vo.setTitle("깐따삐야!");
 		vo.setContent("우주선 사고로 생존");
 		vo.setId(5);

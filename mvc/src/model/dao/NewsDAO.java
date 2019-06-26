@@ -137,6 +137,16 @@ public class NewsDAO {
 					vo.setContent(rs.getString(4));
 					vo.setWritedate(rs.getString(5));
 					vo.setCnt(rs.getInt(6));
+					//조회수 올리기
+					PreparedStatement pstmt2 = conn.prepareStatement(
+							"update news set writer =?, title =?, content = ?, writedate = sysdate, cnt = ? where id = ?");
+					pstmt2.setString(1, vo.getWriter());
+					pstmt2.setString(2, vo.getTitle());
+					pstmt2.setString(3, vo.getContent());
+					pstmt2.setInt(4, vo.getCnt()+1);
+					pstmt2.setInt(5, vo.getId());
+					pstmt2.executeQuery();
+					
 					return vo;
 				}
 			}

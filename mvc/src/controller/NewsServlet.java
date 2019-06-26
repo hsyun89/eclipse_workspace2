@@ -54,7 +54,7 @@ public class NewsServlet extends HttpServlet {
 				dao.insert(vo);
 			}else if(action.equals("update")) { //뉴스 수정
 				vo.setId(Integer.parseInt(id));
-				vo.setCnt(Integer.parseInt(cnt));
+				vo.setCnt(0);
 				dao.update(vo);
 			}
 		}

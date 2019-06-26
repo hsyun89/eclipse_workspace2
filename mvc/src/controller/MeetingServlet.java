@@ -49,7 +49,7 @@ public class MeetingServlet extends HttpServlet {
 				request.setAttribute("list", list);
 			}
 		}
-		request.getRequestDispatcher("/jspexam/meetingView2.jsp").forward(request, response);
+		request.getRequestDispatcher("/jspexam/meetingView2_jstl.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -85,6 +85,6 @@ public class MeetingServlet extends HttpServlet {
 			}
 		}
 		request.setAttribute("list", dao.listAll());
-		request.getRequestDispatcher("/jspexam/meetingView2.jsp").forward(request, response);
+		request.getRequestDispatcher("/jspexam/meetingView2_jstl.jsp").forward(request, response);
 	}
 }

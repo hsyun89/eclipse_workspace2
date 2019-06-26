@@ -38,7 +38,7 @@ public class VisitorServletDB extends HttpServlet {
 				request.setAttribute("list", list);
 			}
 		}
-		request.getRequestDispatcher("/jspexam/visitorView.jsp").forward(request, response);
+		request.getRequestDispatcher("/jspexam/visitorView_jstl.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -56,6 +56,6 @@ public class VisitorServletDB extends HttpServlet {
 		} else {
 			request.setAttribute("msg", name + "님의 글이 입력 실패");
 		}
-		request.getRequestDispatcher("/jspexam/visitorView.jsp").forward(request, response);
+		request.getRequestDispatcher("/jspexam/visitorView_jstl.jsp").forward(request, response);
 	}
 }
