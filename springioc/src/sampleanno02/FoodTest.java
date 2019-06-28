@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class FoodTest {
 	public static void main(String[] args) {
 		ApplicationContext factory = 
-				new ClassPathXmlApplicationContext("sampleanno02/bean1.xml");
+				new ClassPathXmlApplicationContext("sampleanno02/bean2.xml");
 
 		MyFoodMgr ob=factory.getBean("myFood", MyFoodMgr.class);
 		System.out.println(ob.toString());

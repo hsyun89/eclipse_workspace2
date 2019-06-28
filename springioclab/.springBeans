@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/exam1/app.xml</config>
 		<config>src/exam2/app.xml</config>
+		<config>src/exam3/app2.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

@@ -5,6 +5,9 @@ public class MyFoodMgr{
 	private Food favoriteFood;
 	private Food unFavoriteFood;	
 	                 
+	public MyFoodMgr() {
+		super();
+	}
 	public MyFoodMgr(Food favoriteFood, Food unFavoriteFood) {
 		super();
 		this.favoriteFood = favoriteFood;
