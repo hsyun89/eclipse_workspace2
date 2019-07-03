@@ -73,7 +73,7 @@ function upload() {
 	var myblob = new Blob([canvas.toDataURL()], {type : 'text/plain'});
 	data.append('mfile', myblob, "test.png");
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", "/edu/canvasupload", true);
+	xhr.open("POST", "/springedu/canvasupload", true);
 	xhr.send(data);  
 	xhr.onload=function() {
 		if(xhr.responseText == "OK")
@@ -84,7 +84,7 @@ function upload() {
 }
 function downimage() {
 	var xhr = new XMLHttpRequest();
-	xhr.open("GET", "/edu/canvasdownload", true);
+	xhr.open("GET", "/springedu/canvasdownload", true);
 	xhr.send();  
 	xhr.onload=function() { 
         var img = new Image();

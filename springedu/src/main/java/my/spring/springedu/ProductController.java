@@ -3,7 +3,9 @@
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import vo.ProductVO;
@@ -17,13 +19,6 @@ public class ProductController {
 			session.setAttribute("data", new ProductVO());
 
 		ProductVO vo = (ProductVO) session.getAttribute("data");
-
-		if (pid.equals("remove")) {
-			session.invalidate();
-			mav.setViewName("productView2");
-			return mav; // 리턴을 해줘야 여기서 끝난다.
-		} else {
-
 			if (pid.equals("p001")) {
 				vo.setApple();
 			} else if (pid.equals("p002")) {
@@ -34,6 +29,12 @@ public class ProductController {
 			mav.addObject("data", vo);
 			mav.setViewName("productView");
 			return mav;
-		}
+	}
+	@RequestMapping(value = "/remove11", produces = "application/json; charset=utf-8")
+	@ResponseBody
+	public String lll(HttpSession session) {
+		session.invalidate();
+		String s = "{\"result\" : \"지워짐~~\"}";
+		return s;
 	}
 }
