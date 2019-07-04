@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.dao.MeetingJDBCDAO;
+import model.dao.MeetingMyBatisDAO;
 import model.vo.MeetingVO;
 
 @WebServlet("/meeting")
@@ -22,7 +22,7 @@ public class MeetingServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		String action = request.getParameter("action");
 		
-		MeetingJDBCDAO dao = new MeetingJDBCDAO();
+		MeetingMyBatisDAO dao = new MeetingMyBatisDAO();
 		if (keyword==null) {
 			if (action!=null) {
 				boolean result = dao.delete(Integer.parseInt(id));
@@ -59,7 +59,7 @@ public class MeetingServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String title = request.getParameter("title");
 		String meetingDate = request.getParameter("meetingDate");
-		MeetingJDBCDAO dao = new MeetingJDBCDAO();
+		MeetingMyBatisDAO dao = new MeetingMyBatisDAO();
 		MeetingVO vo = new MeetingVO();
 		vo.setName(name);
 		vo.setTitle(title);
@@ -69,7 +69,7 @@ public class MeetingServlet extends HttpServlet {
 			if(action.equals("insert")) {
 				boolean result = dao.insert(vo);
 				if (result) {
-					request.setAttribute("msg", name + "님의 정보가 성공적으로 입력되었어요!!");
+					request.setAttribute("msg", name + "님의 정보가 성공적으로 입력되었어요!!zz");
 				} else {
 					request.setAttribute("msg", name + "님의 정보 입력 실패");
 				}
