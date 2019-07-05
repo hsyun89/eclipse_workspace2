@@ -21,7 +21,9 @@ public class MeetingController {
 		ModelAndView mav = new ModelAndView();
 		if (vo.getName() != null && vo.getMeetingDate() != null && vo.getTitle() != null) { // 인써트
 			if (!action.equals("insert")) {  //업데이트
+				vo.setId(Integer.parseInt(action));
 				boolean result = dao.update(vo);
+				System.out.println(vo);
 				if (result) {
 					mav.addObject("msg", "성공적으로 수정되었어요.");
 				} else {
@@ -58,6 +60,7 @@ public class MeetingController {
 
 		} else if (vo.getId() != 0) { // 삭제
 			boolean result = dao.delete(vo.getId());
+			System.out.println(vo);
 			if (result) {
 				mav.addObject("msg", vo.getId() + "번 글이 삭제되었습니다.");
 			} else {

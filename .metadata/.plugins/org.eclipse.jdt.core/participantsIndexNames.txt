@@ -7,5 +7,7 @@ C:\HS\eclipse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\31
 \mvc\src
 C:\HS\eclipse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4018020592.index
 \sedu\src
+C:\HS\eclipse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3035617498.index
+\springnews\src\main\java
 C:\HS\eclipse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\296797536.index
 \sedu\src
