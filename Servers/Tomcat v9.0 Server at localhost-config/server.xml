@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="edu" path="/edu" reloadable="true" source="org.eclipse.jst.jee.server:edu"/><Context docBase="sedu" path="/sedu" reloadable="true" source="org.eclipse.jst.jee.server:sedu"/><Context docBase="mvc" path="/mvc" reloadable="true" source="org.eclipse.jst.jee.server:mvc"/><Context docBase="springedu" path="/springedu" reloadable="true" source="org.eclipse.jst.jee.server:springedu"/><Context docBase="springnews" path="/springnews" reloadable="true" source="org.eclipse.jst.jee.server:springnews"/></Host>
+      <Context docBase="edu" path="/edu" reloadable="true" source="org.eclipse.jst.jee.server:edu"/><Context docBase="sedu" path="/sedu" reloadable="true" source="org.eclipse.jst.jee.server:sedu"/><Context docBase="mvc" path="/mvc" reloadable="true" source="org.eclipse.jst.jee.server:mvc"/><Context docBase="springedu" path="/springedu" reloadable="true" source="org.eclipse.jst.jee.server:springedu"/><Context docBase="springnews" path="/springnews" reloadable="true" source="org.eclipse.jst.jee.server:springnews"/><Context docBase="d3edu" path="/d3edu" reloadable="true" source="org.eclipse.jst.jee.server:d3edu"/></Host>
     </Engine>
   </Service>
 </Server>
