@@ -27,12 +27,12 @@ public class NewsDAO {
 		System.out.println(result);
 		return result;
 	}
-	public NewsVO listOneCount(NewsVO vo) {
-		NewsVO result=null;
-		String statement = "resource.NewsMapper.selectOneNewsCount";
-		result = session.selectOne(statement,vo);
-		return result;
-	}
+//	public NewsVO listOneCount(NewsVO vo) {
+//		NewsVO result=null;
+//		String statement = "resource.NewsMapper.selectOneNewsCount";
+//		result = session.selectOne(statement,vo);
+//		return result;
+//	}
 	
 	
 	public boolean insert(NewsVO vo) {

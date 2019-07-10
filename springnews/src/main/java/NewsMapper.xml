@@ -12,9 +12,9 @@
 		select id, writer, title, content, to_char(writedate, 'yyyy-mm-dd') writedate, cnt from news where id = #{id}
 	</select>
 <!-- 	조회수 -->
-	<update id="selectOneNewsCount" parameterType="vo.NewsVO">
+<!-- 	<update id="selectOneNewsCount" parameterType="vo.NewsVO">
 		update news set writer =#{writer}, title =#{title}, content = #{content}, writedate = sysdate, cnt = cnt+1 where id = #{id}
-	</update>
+	</update> -->
 	
 	<insert id="insertNews" parameterType="vo.NewsVO">
 		insert into news(id, writer, title, content, writedate, cnt) values(NEWS_SEQ.nextval, #{writer}, #{title}, #{content}, sysdate, 0)
