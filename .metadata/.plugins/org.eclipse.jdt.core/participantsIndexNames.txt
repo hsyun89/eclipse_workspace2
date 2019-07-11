@@ -5,6 +5,8 @@ C:\HS\eclipse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\23
 \sedu\src
 C:\HS\eclipse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3140665380.index
 \mvc\src
+C:\HS\eclipse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\88273569.index
+\trainproj\src\main\java
 C:\HS\eclipse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4018020592.index
 \sedu\src
 C:\HS\eclipse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3035617498.index
