@@ -14,17 +14,13 @@ import vo.LoginVO;
 public class LoginController {
 	@Autowired
 	LoginDAO dao;
-
 // 추가 사항
 // 로그인 get방식으로 받은것을 저장
 // 출력하지 않음
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	  public ModelAndView showLogin() {
-		System.out.println("시작");
-	    ModelAndView mav = new ModelAndView("loginView");
-	    System.out.println("뷰 셋업");
-	    mav.addObject("loginView", new LoginVO());
-	    System.out.println("로그인 페이지 로딩 끝");
+	    ModelAndView mav = new ModelAndView();
+	    mav.setViewName("loginView");
 	    return mav;
 	  }
 
