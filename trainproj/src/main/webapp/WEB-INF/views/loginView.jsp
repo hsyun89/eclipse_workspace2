@@ -7,19 +7,29 @@
 <head>
 <meta charset="UTF-8">
 <title>TT 로그인 페이지</title>
+<style>
+*{
+		text-align: center;
+}
+</style>
 </head>
 <body>
-	<h1>운동 가즈아!!!!!!!!!!</h1>
-	<form id="loginForm" action="/springtrain/loginProcess" method="post">
-		<input type="hidden" name="login" value="${getLogin.getUser_id}">이름 : 
+<br>
+	<h1>TRAIN TOGETHER</h1>
+	<h5>KOREA</h5>
+	<br>
+	<hr>
+	<h3>Log in to Your Account</h3>
+	<form id="loginForm" action="/springtrain/loginmain" method="post">
+<%-- 		<input type="hidden" name="login" value="${getLogin.getUser_id}"> --%>
+		<input type="hidden" name="action" value="login">
 		<input id="username" type="text" name="user_id" placeholder="아이디를 입력해주세요" required> 
 		<br> 
-		<br> 패스워드 : 
+		<br>
 		<input id="passwd" type="password" name="passwd"placeholder="비밀번호를 입력해주세요" required>
 		 <br> 
 		 <br> 
 		 <input id="send" type="submit" value="로그인"> 
-		 <input id="cancel" type="reset" value="취소">
 		<button>
 			<a href="register.jsp">회원가입</a>
 		</button>

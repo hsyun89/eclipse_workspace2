@@ -17,14 +17,14 @@ public class LoginController {
 // 추가 사항
 // 로그인 get방식으로 받은것을 저장
 // 출력하지 않음
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/loginmain", method = RequestMethod.GET)
 	  public ModelAndView showLogin() {
 	    ModelAndView mav = new ModelAndView();
 	    mav.setViewName("loginView");
 	    return mav;
 	  }
 
-	@RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
+	@RequestMapping(value = "/loginmain", method = RequestMethod.POST)
 	protected ModelAndView loginControl(String action, @ModelAttribute("login") LoginVO vo) {
 		ModelAndView mav = new ModelAndView();
 		System.out.println("start");
