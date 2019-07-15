@@ -35,6 +35,7 @@
 		<svg id="myGraph"></svg>
 		<script>
 			d3.csv("mydata2.csv", function(error, data){
+				console.log(data);
 				var dataSet = [ ];	// 데이터를 저장할 배열 변수
 				var labelName = [ ];	// 레이블을 넣을 배열 변수
 				for(var i in data[0]){	// 레이블을 처리

@@ -6,12 +6,14 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="m_name" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="ticks"/>
+			<item value="tick"/>
 			<item value="m_name"/>
 			<item value="Servlet"/>
 			<item value="servlet"/>
@@ -25,8 +27,6 @@
 			<item value="540"/>
 			<item value="myCanvas"/>
 			<item value="canvas"/>
-			<item value="linew"/>
-			<item value="Ltab"/>
 		</list>
 		<list key="replacehistory">
 			<item value="News"/>

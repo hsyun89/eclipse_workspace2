@@ -11,13 +11,10 @@ public class LoginDAO {
 	@Autowired
 	SqlSession session = null;
 	
-	public boolean login(String user_id) {
-		boolean result = true;
-		LoginVO vo = new LoginVO();
+	public LoginVO login(String user_id) {
+		LoginVO result=null;
 		String statement = "resource.NewsMapper.login";
-		System.out.println("디비 아이디" + vo.getUser_id());
-		if (session.selectOne(statement, user_id) == vo.getUser_id())
-			result = true;
+		result=session.selectOne(statement, user_id);
 		return result;
 	}
 }

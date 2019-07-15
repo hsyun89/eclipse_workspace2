@@ -17,7 +17,7 @@
 	<!-- <delete id="deleteNews"  parameterType="_int"  >
     	delete from news where id=#{id}
 	</delete> -->
- 	<select id="login" parameterType="string" resultType="_boolean"> <!-- listAll 형식 사용 서포트 -->
+ 	<select id="login" parameterType="String" resultType="vo.LoginVO"> <!-- listAll 형식 사용 서포트 -->
     	select user_id, passwd from member where user_id = #{user_id}
  	</select>
 </mapper> 
