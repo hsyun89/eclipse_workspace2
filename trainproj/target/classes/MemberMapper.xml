@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="resource.NewsMapper">
+<mapper namespace="resource.MemberMapper">
   	<insert id="register"  parameterType="vo.RegisterVO">
   			insert into member (user_id, email, passwd)
     		values (#{user_id}, #{email}, #{passwd})
@@ -20,4 +20,8 @@
  	<select id="login" parameterType="String" resultType="vo.LoginVO"> <!-- listAll 형식 사용 서포트 -->
     	select user_id, passwd from member where user_id = #{user_id}
  	</select>
+ 	
+ 	<select id="selectAllTrain" resultType="vo.TrainVO">
+		select code, originNo, groupOrd, groupLayer, title, user_id from train order by originNo
+	</select>
 </mapper> 
