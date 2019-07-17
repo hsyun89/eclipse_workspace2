@@ -13,6 +13,41 @@
 .left{
 	text-align: left;
 }
+.right{
+ text-align: right;
+}
+<style>
+td {
+	border-bottom: 1px dotted black;
+}
+
+tr:hover {
+	background-color: lightgrey;
+	font-weight: bold;
+}
+
+td:nth-child(1) {
+	width: 50px;
+}
+
+td:nth-child(2) {
+	width: 50px;
+}
+
+td:nth-child(3) {
+	width: 50px;
+}
+
+td:nth-child(4) {
+	width: 50px;
+}
+
+td:nth-child(5) {
+	width: 400px;
+}
+td:nth-child(6) {
+	width: 50px;
+}
 </style>
 </head>
 <body>
@@ -33,7 +68,7 @@
 			<td>originNo</td>
 			<td>groupOrd</td>
 			<td>groupLayer</td>
-			<td>title</td>
+			<td>title<a href="/springtrain/trainmain?action=plusMaster&user_id=test"><img src="/springtrain/resources/images/plus.png"  width=17 align="right"></a></td>
 			<td>user_id</td>
 		</tr>
 		<%
@@ -44,16 +79,37 @@
 			<td><%=vo.getOriginNo()%></td>
 			<td><%=vo.getGroupOrd()%></td>
 			<td><%=vo.getGroupLayer()%></td>
-			<td><%=vo.getTitle()%></td>
+			<td><% for(int i=0;i<vo.getGroupLayer();i++){%>&nbsp;&nbsp;&nbsp;&nbsp;<%}%><%=vo.getTitle()%>
+			<!-- 추가버튼 클릭 -->
+			<a href="/springtrain/trainmain?action=plus&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>&user_id=<%=vo.getUser_id()%>"><img src="/springtrain/resources/images/plus.png"  width=17 align="bottom"></a>
+			<!-- 수정버튼 클릭 -->
+			<img  onclick="displayDiv(<%=vo.getCode()%>)" src="/springtrain/resources/images/edit.png"  width=17>
+			<div id=<%=vo.getCode()%> style="display:none">
+			<form method="get">
+			<input name="action" type="hidden" value="edit">
+			<input name="code" type="hidden" value=<%=vo.getCode() %>>
+			<input name="title" type="text" value=<%=vo.getTitle()%>>
+			<input type = "submit" value = "수정">
+			</form>
+			</div>
+			<!-- 삭제버튼 클릭 -->
+			<a href="/springtrain/trainmain?action=delete&code=<%=vo.getCode()%>"><img src="/springtrain/resources/images/trash.png"  width=20 align="right"></a>
+			</td>
 			<td><%=vo.getUser_id()%></td>
-
 		</tr>
 		<%
 			}
 		%>
 	</table>
-  <script>
-	
+  <script> 
+	function displayDiv(code) {
+		if(document.getElementById(code).style.display == 'none'){
+			document.getElementById(code).style.display = 'block';
+		}
+		else{
+			document.getElementById(code).style.display = 'none';
+		}
+	}
   </script>
 </body>
 </html>

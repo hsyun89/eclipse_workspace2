@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="resource.TrainMapper">
+  	<insert id="register"  parameterType="vo.RegisterVO">
+  			insert into member (user_id, email, passwd)
+    		values (#{user_id}, #{email}, #{passwd})
+	</insert>	
+	<!-- <update id="register"  parameterType="vo.Member.">
+    	update news set  
+				writer=#{writer} 
+				, title=#{title}
+				, content=#{content}
+		where id=#{id}
+	</update> -->
+	<!-- <delete id="deleteNews"  parameterType="_int"  >
+    	delete from news where id=#{id}
+	</delete> -->
+ 	<select id="login" parameterType="String" resultType="vo.LoginVO"> <!-- listAll 형식 사용 서포트 -->
+    	select user_id, passwd from member where user_id = #{user_id}
+ 	</select>
+ 	
+ 	<select id="selectAllTrain" resultType="vo.TrainVO">
+		select code, originNo, groupOrd, groupLayer, title, user_id from train order by originNo, groupOrd
+	</select>
+	
+	<insert id="plusTrainMaster" parameterType="vo.TrainVO">
+	  	<selectKey resultType="int" keyProperty="code" order="BEFORE">
+      		   select code_seq.nextval from dual   
+    	</selectKey>  
+	  	insert into train (code, originNo, groupOrd, groupLayer, title, user_id) values (#{code}, #{code}, #{groupOrd}, #{groupLayer}, 'default', #{user_id})
+	</insert>
+	<insert id="plusTrain" parameterType="vo.TrainVO">
+	  	<selectKey resultType="int" keyProperty="code" order="BEFORE">
+      		   select code_seq.nextval from dual   
+    	</selectKey>  
+	  	insert into train (code, originNo, groupOrd, groupLayer, title, user_id) values (#{code}, #{originNo}, #{groupOrd}, #{groupLayer}, 'default', #{user_id})
+	</insert>
+	
+	<delete id="deleteTrain" parameterType="_int">
+		delete from train where code = #{code}
+	</delete>
+	
+	<update id="editTrain" parameterType="vo.TrainVO">
+		update train set title =#{title} where code = #{code}
+	</update>
+	
+	<update id="update1" parameterType="vo.TrainVO">
+		update train set groupOrd =groupOrd+1 where originNo = #{originNo} and groupOrd>#{groupOrd}
+	</update>
+</mapper> 
