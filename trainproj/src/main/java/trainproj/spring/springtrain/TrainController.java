@@ -25,18 +25,28 @@ public class TrainController {
 					vo.setUser_id(user_id);
 					dao.plusMaster(vo);
 				}
-			if (action.equals("plus")) {
+			if (action.equals("plus2")) {
 				vo.setOriginNo(Integer.parseInt(originNo));
 				vo.setGroupOrd(Integer.parseInt(groupOrd));
 				vo.setGroupLayer(Integer.parseInt(groupLayer));
 				vo.setUser_id(user_id);
-				dao.update1(vo);
-				vo.setGroupOrd(Integer.parseInt(groupOrd)+1);
-				vo.setGroupLayer(Integer.parseInt(groupLayer) + 1);
-				dao.plus(vo);
+				dao.plus2(vo);
 			}
+//			if (action.equals("plus")) {
+//				vo.setOriginNo(Integer.parseInt(originNo));
+//				vo.setGroupOrd(Integer.parseInt(groupOrd));
+//				vo.setGroupLayer(Integer.parseInt(groupLayer));
+//				vo.setUser_id(user_id);
+//				dao.update1(vo);
+//				vo.setGroupOrd(Integer.parseInt(groupOrd)+1);
+//				vo.setGroupLayer(Integer.parseInt(groupLayer) + 1);
+//				dao.plus(vo);
+//			}
 			if (action.equals("delete")) {
-				dao.delete(Integer.parseInt(code));
+				vo.setOriginNo(Integer.parseInt(originNo));
+				vo.setGroupOrd(Integer.parseInt(groupOrd));
+				vo.setGroupLayer(Integer.parseInt(groupLayer));
+				dao.delete(vo);
 			}
 			if (action.equals("edit")) {
 				vo.setCode(Integer.parseInt(code));

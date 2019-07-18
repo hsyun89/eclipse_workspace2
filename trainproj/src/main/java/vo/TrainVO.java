@@ -8,6 +8,13 @@ public class TrainVO {
 	private String title;
 	private String contents;
 	private String user_id;
+	private int groupOrdTail;
+	public int getGroupOrdTail() {
+		return groupOrdTail;
+	}
+	public void setGroupOrdTail(int groupOrdTail) {
+		this.groupOrdTail = groupOrdTail;
+	}
 	@Override
 	public String toString() {
 		return "TrainVO [code=" + code + ", originNo=" + originNo + ", groupOrd=" + groupOrd + ", groupLayer="

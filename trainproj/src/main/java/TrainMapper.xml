@@ -22,7 +22,7 @@
  	</select>
  	
  	<select id="selectAllTrain" resultType="vo.TrainVO">
-		select code, originNo, groupOrd, groupLayer, title, user_id from train order by originNo, groupOrd
+		select code, originNo, groupOrd, groupLayer, title, user_id from train order by originNo, groupOrd ASC
 	</select>
 	
 	<insert id="plusTrainMaster" parameterType="vo.TrainVO">
@@ -31,7 +31,44 @@
     	</selectKey>  
 	  	insert into train (code, originNo, groupOrd, groupLayer, title, user_id) values (#{code}, #{code}, #{groupOrd}, #{groupLayer}, 'default', #{user_id})
 	</insert>
+	
 	<insert id="plusTrain" parameterType="vo.TrainVO">
+	  	<selectKey resultType="int" keyProperty="code" order="BEFORE">
+      		   select code_seq.nextval from dual   
+    	</selectKey>  
+	  	insert into train (code, originNo, groupOrd, groupLayer, title, user_id) values (#{code}, #{originNo}, #{groupOrd}, #{groupLayer}, 'default', #{user_id})
+	</insert>
+	
+	 <select id="formula1" parameterType="vo.TrainVO" resultType="int">
+		SELECT NVL(MIN(groupOrd),0) FROM train WHERE  originNo = #{originNo}
+   		AND groupOrd <![CDATA[>]]> #{groupOrd} 
+  		AND groupLayer <![CDATA[<=]]> #{groupLayer}
+	</select>
+	
+	 <select id="formula2" parameterType="vo.TrainVO" resultType="int">
+		SELECT NVL(MAX(groupOrd),0) + 1 FROM train 
+    	WHERE originNo = #{originNo}
+	</select>
+	
+	 <update id="formula3" parameterType="vo.TrainVO">
+		UPDATE train SET groupOrd = groupOrd + 1 
+  		WHERE originNo =  #{originNo}  AND groupOrd >= #{groupOrd}
+	</update>
+	
+	 <select id="deleteFormula1" parameterType="vo.TrainVO" resultType="int">
+		select * from train
+ 		where originNo = #{originNo}
+   		and groupOrd <![CDATA[>]]> #{groupOrd}
+	</select>
+	
+	 <select id="deleteFormula2" parameterType="vo.TrainVO" resultType="int">
+		select * from train
+ 		where originNo = #{originNo}
+   		and groupOrd <![CDATA[>]]> #{groupOrd}
+   		and groupOrd <![CDATA[<]]> #{groupOrdTail}
+	</select>
+	
+	<insert id="plusTrain2" parameterType="vo.TrainVO">
 	  	<selectKey resultType="int" keyProperty="code" order="BEFORE">
       		   select code_seq.nextval from dual   
     	</selectKey>  
@@ -46,7 +83,7 @@
 		update train set title =#{title} where code = #{code}
 	</update>
 	
-	<update id="update1" parameterType="vo.TrainVO">
+<!-- 	<update id="update1" parameterType="vo.TrainVO">
 		update train set groupOrd =groupOrd+1 where originNo = #{originNo} and groupOrd>#{groupOrd}
-	</update>
+	</update> -->
 </mapper> 

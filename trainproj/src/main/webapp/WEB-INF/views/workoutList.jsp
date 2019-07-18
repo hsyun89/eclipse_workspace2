@@ -48,6 +48,9 @@ td:nth-child(5) {
 td:nth-child(6) {
 	width: 50px;
 }
+form {
+	display: inline;
+}
 </style>
 </head>
 <body>
@@ -79,21 +82,21 @@ td:nth-child(6) {
 			<td><%=vo.getOriginNo()%></td>
 			<td><%=vo.getGroupOrd()%></td>
 			<td><%=vo.getGroupLayer()%></td>
-			<td><% for(int i=0;i<vo.getGroupLayer();i++){%>&nbsp;&nbsp;&nbsp;&nbsp;<%}%><%=vo.getTitle()%>
-			<!-- 추가버튼 클릭 -->
-			<a href="/springtrain/trainmain?action=plus&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>&user_id=<%=vo.getUser_id()%>"><img src="/springtrain/resources/images/plus.png"  width=17 align="bottom"></a>
+			<td><% for(int i=0;i<vo.getGroupLayer();i++){%>&nbsp;&nbsp;&nbsp;&nbsp;<%}%><a onclick="displayDiv(<%=vo.getCode()%>)" class=<%=vo.getCode()%> style="display:"><%=vo.getTitle()%></a>
 			<!-- 수정버튼 클릭 -->
-			<img  onclick="displayDiv(<%=vo.getCode()%>)" src="/springtrain/resources/images/edit.png"  width=17>
-			<div id=<%=vo.getCode()%> style="display:none">
+<%-- 			<img  onclick="displayDiv(<%=vo.getCode()%>)" src="/springtrain/resources/images/edit.png"  width=17 align="right"> --%>
+			<span class=<%=vo.getCode()%> style="display:none">
 			<form method="get">
 			<input name="action" type="hidden" value="edit">
 			<input name="code" type="hidden" value=<%=vo.getCode() %>>
-			<input name="title" type="text" value=<%=vo.getTitle()%>>
-			<input type = "submit" value = "수정">
+			<input name="title" type="text" value="<%=vo.getTitle()%>">
+			<input type = "submit" value = "확인">
 			</form>
-			</div>
+			</span>
 			<!-- 삭제버튼 클릭 -->
-			<a href="/springtrain/trainmain?action=delete&code=<%=vo.getCode()%>"><img src="/springtrain/resources/images/trash.png"  width=20 align="right"></a>
+			<a href="/springtrain/trainmain?action=delete&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>"><img src="/springtrain/resources/images/trash.png"  width=20 align="right"></a>
+			<!-- 추가버튼 클릭 -->
+			<a href="/springtrain/trainmain?action=plus2&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>&user_id=<%=vo.getUser_id()%>"><img src="/springtrain/resources/images/plus.png"  width=17 align="right"></a>
 			</td>
 			<td><%=vo.getUser_id()%></td>
 		</tr>
@@ -103,11 +106,17 @@ td:nth-child(6) {
 	</table>
   <script> 
 	function displayDiv(code) {
-		if(document.getElementById(code).style.display == 'none'){
-			document.getElementById(code).style.display = 'block';
+		if(document.getElementsByClassName(code)[0].style.display == 'none'){
+			document.getElementsByClassName(code)[0].style.display = '';
 		}
 		else{
-			document.getElementById(code).style.display = 'none';
+			document.getElementsByClassName(code)[0].style.display = 'none';
+		}
+		if(document.getElementsByClassName(code)[1].style.display == 'none'){
+			document.getElementsByClassName(code)[1].style.display = '';
+		}
+		else{
+			document.getElementsByClassName(code)[1].style.display = 'none';
 		}
 	}
   </script>

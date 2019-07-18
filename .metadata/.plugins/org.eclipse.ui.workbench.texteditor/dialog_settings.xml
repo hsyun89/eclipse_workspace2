@@ -12,6 +12,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="update"/>
 			<item value="ticks"/>
 			<item value="tick"/>
 			<item value="m_name"/>
@@ -26,7 +27,6 @@
 			<item value="p1"/>
 			<item value="540"/>
 			<item value="myCanvas"/>
-			<item value="canvas"/>
 		</list>
 		<list key="replacehistory">
 			<item value="News"/>
