@@ -13,10 +13,10 @@ public class TrainDAO {
 	@Autowired
 	SqlSession session = null;
 
-	public List<TrainVO> listAll() {
+	public List<TrainVO> listAll(String user_id) {
 		List<TrainVO> list = null;
 		String statement = "resource.TrainMapper.selectAllTrain";
-		list = session.selectList(statement);
+		list = session.selectList(statement, user_id);
 		return list;
 	}
 
@@ -83,10 +83,16 @@ public class TrainDAO {
 			list = session.selectList(statement,vo);
 			System.out.println("요");
 		}
+		//요기까지 하다감!
+		list.add(vo.getCode());
 		System.out.println(list.toString());
 //		statement = "resource.TrainMapper.deleteTrain";
 //		if (session.delete(statement, vo.getCode()) != 1)
 //			result = false;
+		statement = "resource.TrainMapper.deleteTrain";
+		for(int data:list) {
+			session.delete(statement, data);
+		}
 		return result;
 	}
 

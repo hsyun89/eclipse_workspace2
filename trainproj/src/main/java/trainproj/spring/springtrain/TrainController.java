@@ -1,5 +1,7 @@
 package trainproj.spring.springtrain;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +18,9 @@ public class TrainController {
 
 	@RequestMapping(value = "/trainmain", method = RequestMethod.GET)
 	public ModelAndView get(String action, String code, String originNo, String groupOrd, String groupLayer,
-			String user_id, String title) {
+			HttpSession session, String title) {
 		TrainVO vo = new TrainVO();
+		String user_id = (String) session.getAttribute("user_id");
 		if (action != null) {
 			if (action.equals("plusMaster")) {
 					vo.setGroupOrd(0);
@@ -43,6 +46,7 @@ public class TrainController {
 //				dao.plus(vo);
 //			}
 			if (action.equals("delete")) {
+				vo.setCode(Integer.parseInt(code));
 				vo.setOriginNo(Integer.parseInt(originNo));
 				vo.setGroupOrd(Integer.parseInt(groupOrd));
 				vo.setGroupLayer(Integer.parseInt(groupLayer));
@@ -55,7 +59,7 @@ public class TrainController {
 			}
 		}
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("list", dao.listAll());
+		mav.addObject("list", dao.listAll(user_id));
 		mav.setViewName("workoutList");
 		return mav;
 	}

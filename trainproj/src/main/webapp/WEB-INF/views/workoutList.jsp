@@ -7,6 +7,10 @@
   <meta charset="utf-8">
   <title>train list</title>
   <style>
+ a{
+	text-decoration:none;
+	color: #000000;
+}
 .middle{
 		text-align: center;
 }
@@ -20,69 +24,70 @@
 td {
 	border-bottom: 1px dotted black;
 }
-
+table{
+	margin: auto;
+}
 tr:hover {
 	background-color: lightgrey;
 	font-weight: bold;
 }
-
-td:nth-child(1) {
+/* td:nth-child(1) {
 	width: 50px;
 }
-
 td:nth-child(2) {
 	width: 50px;
 }
-
 td:nth-child(3) {
 	width: 50px;
 }
-
 td:nth-child(4) {
 	width: 50px;
 }
-
 td:nth-child(5) {
-	width: 400px;
+	width: 500px;
 }
 td:nth-child(6) {
 	width: 50px;
-}
+} */
 form {
 	display: inline;
 }
 </style>
 </head>
 <body>
+<form Action="/springtrain/logout" method="post">
+	<input id="logout" type="submit" value="로그아웃">
+</form>
 <br>
 	<h1 class="middle">TRAIN TOGETHER</h1>
 	<h5 class="middle">KOREA</h5>
 	<br>
 	<hr>
-	<span class="menu">TRAINING LOG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-	<span class="menu">TRAIN TOGETHER</span><hr>
-	TRAINING LOG<br>
+	<img src="/springtrain/resources/images/list.png"  width="17">
+	<span class="menu">&nbsp;&nbsp;<a href="/springtrain/trainmain">TRAINING LOG</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	<span class="menu"><a href="/springtrain/partymain">TRAIN TOGETHER</a></span><hr>
+	<h5 class="middle">TRAINING LOG</h5>
 		<%
 		ArrayList<TrainVO> list = (ArrayList<TrainVO>) request.getAttribute("list");
 	%>
 	<table>
 		<tr>
-			<td>code</td>
+<!-- 			<td>code</td>
 			<td>originNo</td>
 			<td>groupOrd</td>
-			<td>groupLayer</td>
-			<td>title<a href="/springtrain/trainmain?action=plusMaster&user_id=test"><img src="/springtrain/resources/images/plus.png"  width=17 align="right"></a></td>
-			<td>user_id</td>
+			<td>groupLayer</td> -->
+			<td width="500px"><a href="/springtrain/trainmain?action=plusMaster&user_id=test"><img src="/springtrain/resources/images/plus.png"  width=17 align="right"></a></td>
+<!-- 			<td>user_id</td> -->
 		</tr>
 		<%
 			for (TrainVO vo : list) {
 		%>
 		<tr>
-			<td><%=vo.getCode()%></td>
+<%-- 			<td><%=vo.getCode()%></td>
 			<td><%=vo.getOriginNo()%></td>
 			<td><%=vo.getGroupOrd()%></td>
-			<td><%=vo.getGroupLayer()%></td>
-			<td><% for(int i=0;i<vo.getGroupLayer();i++){%>&nbsp;&nbsp;&nbsp;&nbsp;<%}%><a onclick="displayDiv(<%=vo.getCode()%>)" class=<%=vo.getCode()%> style="display:"><%=vo.getTitle()%></a>
+			<td><%=vo.getGroupLayer()%></td> --%>
+			<td><% for(int i=0;i<vo.getGroupLayer();i++){%>&nbsp;&nbsp;&nbsp;&nbsp;<%}%><img src="/springtrain/resources/images/dumbbell.png"  width=17>&nbsp;<a onclick="displayDiv(<%=vo.getCode()%>)" class=<%=vo.getCode()%> style="display:"><%=vo.getTitle()%></a>
 			<!-- 수정버튼 클릭 -->
 <%-- 			<img  onclick="displayDiv(<%=vo.getCode()%>)" src="/springtrain/resources/images/edit.png"  width=17 align="right"> --%>
 			<span class=<%=vo.getCode()%> style="display:none">
@@ -98,7 +103,7 @@ form {
 			<!-- 추가버튼 클릭 -->
 			<a href="/springtrain/trainmain?action=plus2&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>&user_id=<%=vo.getUser_id()%>"><img src="/springtrain/resources/images/plus.png"  width=17 align="right"></a>
 			</td>
-			<td><%=vo.getUser_id()%></td>
+<%-- 			<td><%=vo.getUser_id()%></td> --%>
 		</tr>
 		<%
 			}

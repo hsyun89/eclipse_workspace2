@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="vo.LoginVO, java.util.ArrayList"%>
+<%@ page import="vo.MemberVO, java.util.ArrayList"%>
 
 <!DOCTYPE html>
 <html>
@@ -9,8 +9,6 @@
 <title>TT 로그인 페이지</title>
 </head>
 <body>
-	
-	<h1>환영한다</h1>
-	
+	<meta http-equiv="refresh" content="0; url=/springtrain/trainmain">
 </body>
 </html>

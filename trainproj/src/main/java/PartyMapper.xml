@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="resource.PartyMapper">
+<!-- 리스트 -->  
+ 	<select id="selectParty"  resultType="vo.PartyVO">
+    	select party_id
+    		, User_id
+    		, post_number
+    		, title
+    		, contents
+    		, to_char(write_date,'yyyy"년"mm"월"dd"일"') write_date
+    		, party_size
+    		, location 
+    		from Party
+    		order by post_number desc
+
+ 	</select>
+<!-- 리드 --> 
+    <select id="listOneParty"  parameterType="_int" resultType="vo.PartyVO">
+    	select party_id, User_id, post_number, title, contents, to_char(write_date,'yyyy"년"mm"월"dd"일"') write_date, party_size, location from Party where post_number = #{post_number}
+    </select>
+<!-- 카운트 -->    
+     <select id="countParty" parameterType="_int" resultType="vo.ParticipantVO">
+     select party_id, user_id from participant where party_id = #{party_id}     
+     </select>
+     
+     <select id="checkParticipant" parameterType="_int" resultType="vo.ParticipantVO">
+     select party_id, user_id from participant where party_id = #{party_id}
+     </select>
+     
+  	<insert id="insertParty"  parameterType="vo.PartyVO">
+  		<selectKey resultType="int" keyProperty="post_number" order="BEFORE">
+      		select post_seq.nextval from dual     
+    	</selectKey>
+    		insert into Party (party_id, user_id, post_number, write_date, title, contents, party_size, location) values (party_seq.nextval, #{user_id}, #{post_number}, sysdate, #{title}, #{contents}, #{party_size}, #{location})
+	</insert>	
+		
+	<update id="updateParty"  parameterType="vo.PartyVO"  >
+    	update Party set title =#{title}, contents = #{contents}, party_size = #{party_size}, location=#{location} where post_number = #{post_number}
+	</update>
+	
+	<delete id="deleteParty"  parameterType="_int"  >
+    	delete from Party where post_number = #{post_number}
+	</delete>
+	
+	<delete id="cancelJoin"  parameterType="vo.ParticipantVO"  >
+    	delete from participant 
+    	where party_id = #{party_id}
+    	and user_id = #{user_id}
+	</delete>
+	
+	<select id="checkParty" parameterType="vo.ParticipantVO" resultType="vo.ParticipantVO">
+		select party_id
+		, user_id 
+		from participant 
+		where party_id=#{party_id} 
+		and user_id=#{user_id}
+	</select>
+	
+	<insert id="joinParty"  parameterType="vo.ParticipantVO"  >
+    	insert into Participant(Party_id, User_id) values (#{party_id}, #{user_id})
+	</insert>
+
+</mapper>

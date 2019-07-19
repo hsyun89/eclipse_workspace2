@@ -3,10 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="resource.TrainMapper">
-  	<insert id="register"  parameterType="vo.RegisterVO">
+<!--   	<insert id="register"  parameterType="vo.RegisterVO">
   			insert into member (user_id, email, passwd)
     		values (#{user_id}, #{email}, #{passwd})
-	</insert>	
+	</insert>	 -->
 	<!-- <update id="register"  parameterType="vo.Member.">
     	update news set  
 				writer=#{writer} 
@@ -21,8 +21,8 @@
     	select user_id, passwd from member where user_id = #{user_id}
  	</select>
  	
- 	<select id="selectAllTrain" resultType="vo.TrainVO">
-		select code, originNo, groupOrd, groupLayer, title, user_id from train order by originNo, groupOrd ASC
+ 	<select id="selectAllTrain" parameterType="String" resultType="vo.TrainVO">
+		select code, originNo, groupOrd, groupLayer, title, user_id from train where user_id=#{user_id} order by originNo, groupOrd ASC
 	</select>
 	
 	<insert id="plusTrainMaster" parameterType="vo.TrainVO">
