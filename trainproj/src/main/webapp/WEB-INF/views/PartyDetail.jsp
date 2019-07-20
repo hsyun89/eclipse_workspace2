@@ -6,7 +6,10 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" rel="stylesheet">
+<title>TRAIN TOGETHER</title>
 <script src="http://code.jquery.com/jquery-1.7.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -16,10 +19,19 @@
    crossorigin=""></script>
 </head>
 <style>
-section {
-	text-align: center;
+ img{
+ 	vertical-align: top;
+ }
+ a{
+	text-decoration:none;
+	color: #000000;
 }
-
+/* section {
+	text-align: center;
+} */
+.middle{
+		text-align: center;
+}
 h1 {
 	text-align: center;
 }
@@ -49,20 +61,27 @@ td:nth-child(1) {
 	<h5 class="middle">KOREA</h5>
 	<br>
 	<hr>
-	<span class="menu">TRAINING LOG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-	<span class="menu">TRAIN TOGETHER</span><hr>
-	TRAINING LOG<br>
+	<img src="/springtrain/resources/images/list.png"  width="25">
+	<span class="menu">&nbsp;&nbsp;<a href="/springtrain/trainmain">TRAINING LOG</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	<span class="menu"><a href="/springtrain/partymain">TRAIN TOGETHER</a></span>
+		<span style="float: right;">
+	<form action="/springtrain/logout" method="post">
+		<input class="btn btn-default btn-sm pull-right" id="logout" type="submit" value="로그아웃   ">
+	</form>
+	</span><hr>
+	<div class="container">
 	<%
 		ArrayList<ParticipantVO> list = (ArrayList<ParticipantVO>) request.getAttribute("parlist");
 		if (request.getAttribute("vo") != null) {
 			PartyVO vo = (PartyVO) request.getAttribute("vo");
 	%>
 	<!-------------------------------- 글 보기 -------------------------------->
-	<h1>모임 내용</h1>
+<!-- 	<h1>모임 내용</h1> -->
 	<br>
 	<section>
-		<h3><%=vo.getTitle()%></h3>
-		<%=vo.getUser_id()%><br>
+		<%=vo.getTitle()%>
+		<hr>
+		<%=vo.getUser_id()%>
 		<hr>
 		<%=vo.getLocation()%><br> 인원
 		<%=vo.getParty_size()%>명 <br> 현재
@@ -92,7 +111,7 @@ td:nth-child(1) {
 		<hr>
 		<%=vo.getContents()%>
 		<h4><%=vo.getLocation() %></h4>
-		<div id="mapid" style="width: 300px; height: 300px;"></div>
+		<div id="mapid" style="width: 1000px; height: 500px;"></div>
 		
 		<br> <br>
 
@@ -162,6 +181,6 @@ td:nth-child(1) {
 	%>
 	
 
-
+</div>
 </body>
 </html>

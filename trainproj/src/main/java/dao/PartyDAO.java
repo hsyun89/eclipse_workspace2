@@ -30,6 +30,7 @@ public class PartyDAO {
 		return list;
 	}
 	
+	
 
 	public boolean insert(PartyVO vo) {
 		boolean result = false;
@@ -140,6 +141,41 @@ public class PartyDAO {
 		parlist = session.selectList(statement,party_id);
 		return parlist;
 	}
-	
+	public List<PartyVO> searchTitle(String keyword) {
+	       List<PartyVO> list = null;
+	       String statement = "resource.PartyMapper.searchPartyTitle";
+	       list = session.selectList(statement, keyword);
+	        for (int i = 0; i < list.size(); i++) {
+	            list.get(i).setParticipant_size(count(list.get(i).getParty_id()));
+	    }
+	       return list;
+	   }
+	    public List<PartyVO> searchLocation(String keyword) {
+	        List<PartyVO> list = null;
+	        String statement = "resource.PartyMapper.searchPartyLocation";
+	        list = session.selectList(statement, keyword);
+	        for (int i = 0; i < list.size(); i++) {
+	            list.get(i).setParticipant_size(count(list.get(i).getParty_id()));
+	    }
+	        return list;
+	    }
+	    public List<PartyVO> searchUser_id(String keyword) {
+	        List<PartyVO> list = null;
+	        String statement = "resource.PartyMapper.searchPartyUser_id";
+	        list = session.selectList(statement, keyword);
+	        for (int i = 0; i < list.size(); i++) {
+	            list.get(i).setParticipant_size(count(list.get(i).getParty_id()));
+	        }
+	        return list;
+	    }
+	    public List<PartyVO> searchContents(String keyword) {
+	        List<PartyVO> list = null;
+	        String statement = "resource.PartyMapper.searchPartyContents";
+	        list = session.selectList(statement, keyword);
+	        for (int i = 0; i < list.size(); i++) {
+	            list.get(i).setParticipant_size(count(list.get(i).getParty_id()));
+	        }
+	        return list;
+	    }
 	
 }

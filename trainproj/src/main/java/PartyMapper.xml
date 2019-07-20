@@ -62,5 +62,53 @@
 	<insert id="joinParty"  parameterType="vo.ParticipantVO"  >
     	insert into Participant(Party_id, User_id) values (#{party_id}, #{user_id})
 	</insert>
+	<select id="searchPartyContents"  parameterType="string" resultType="vo.PartyVO">
+      select party_id
+           , User_id
+           , post_number
+           , title
+           , contents
+           , to_char(write_date,'yyyy"년"mm"월"dd"일"') write_date
+           , party_size
+           , location
+           from Party
+          where contents like '%'||#{keyword}||'%'
+  </select>
+    <select id="searchPartyTitle"  parameterType="string" resultType="vo.PartyVO">
+      select party_id
+           , User_id
+           , post_number
+           , title
+           , contents
+           , to_char(write_date,'yyyy"년"mm"월"dd"일"') write_date
+           , party_size
+           , location
+           from Party
+          where title like '%'||#{keyword}||'%'
+  </select>
+    <select id="searchPartyLocation"  parameterType="string" resultType="vo.PartyVO">
+      select party_id
+           , User_id
+           , post_number
+           , title
+           , contents
+           , to_char(write_date,'yyyy"년"mm"월"dd"일"') write_date
+           , party_size
+           , location
+           from Party
+          where location like '%'||#{keyword}||'%'
+  </select>
+    <select id="searchPartyUser_id"  parameterType="string" resultType="vo.PartyVO">
+      select party_id
+           , User_id
+           , post_number
+           , title
+           , contents
+           , to_char(write_date,'yyyy"년"mm"월"dd"일"') write_date
+           , party_size
+           , location
+           from Party
+          where user_id like '%'||#{keyword}||'%'
+  </select>
 
 </mapper>

@@ -21,8 +21,7 @@ public class PartyController {
 	PartyDAO dao;
 
 	@RequestMapping(value = "/partymain", method = RequestMethod.GET)
-	protected ModelAndView get(String action, String select, String post_number, HttpSession session) {
-		ModelAndView mav = new ModelAndView();
+	protected ModelAndView get(String action, String select, String post_number, String col, String keyword, HttpSession session) {		ModelAndView mav = new ModelAndView();
 //		ModelAndView mav_default = new ModelAndView();
 		List<PartyVO> list = null;
 		list = dao.listAll();
@@ -36,7 +35,30 @@ public class PartyController {
 				mav.addObject("list", list);
 			}
 		}
-
+		//search
+		if (action!=null && action.equals("search")) {
+            System.out.println("서치시작");
+           if (list.size() != 0 && col.equals("title")) {
+               System.out.println("서칭 title 키워드 : " + keyword);
+               list = dao.searchTitle(keyword);
+               mav.addObject("list", list);
+           } else if (list.size() != 0 && col.equals("location")) {
+               System.out.println("서칭 location 키워드 : " + keyword);
+               list = dao.searchLocation(keyword);
+               mav.addObject("list", list);
+           } else if (list.size() != 0 && col.equals("user_id")) {
+               System.out.println("서칭 user_id 키워드 : " + keyword);
+               list = dao.searchUser_id(keyword);
+               mav.addObject("list", list);
+           } else if (list.size() != 0 && col.equals("contents")) {
+               System.out.println("서칭 contents 키워드 : " + keyword);
+               list = dao.searchContents(keyword);
+               mav.addObject("list", list);
+           } else {
+               mav.addObject("msg", keyword + "로 검색된 정보가 없습니다.");
+               mav.addObject("list", list);
+           }
+        }
 		if (post_number != null) {
 			int i_post_number = Integer.parseInt(post_number);
 			PartyVO vo = null;

@@ -40,7 +40,7 @@ public class RegisterController {
 					mav.addObject("msg", vo.getUser_id() + "님 가입을 환영합니다.");
 					viewName = "loginView";
 				} else {
-					mav.addObject("msg", "다시 써 임마");
+					mav.addObject("msg", "이미 존재하는 아이디입니다.");
 					viewName = "registerView";
 				}
 			}

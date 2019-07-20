@@ -5,7 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Train-Together</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+<title>TRAIN TOGETHER</title>
 <script src="http://code.jquery.com/jquery-1.7.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -15,6 +18,9 @@
    crossorigin=""></script>
 </head>
 <style>
+ img{
+ 	vertical-align: top;
+ }
 a{
 	text-decoration:none;
 	color: #000000;
@@ -72,21 +78,26 @@ form {
 	<h5 class="middle">KOREA</h5>
 	<br>
 	<hr>
-	<span class="menu"><a href="/springtrain/trainmain">TRAINING LOG</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-	<span class="menu"><a href="/springtrain/partymain">TRAIN TOGETHER</a></span><hr>
-
+		<img src="/springtrain/resources/images/list.png"  width="25">
+	<span class="menu">&nbsp;&nbsp;<a href="/springtrain/trainmain">TRAINING LOG</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	<span class="menu"><a href="/springtrain/partymain">TRAIN TOGETHER</a></span>
+		<span style="float: right;">
+	<form action="/springtrain/logout" method="post">
+		<input class="btn btn-default btn-sm pull-right" id="logout" type="submit" value="로그아웃   ">
+	</form>
+	</span><hr>
+<div class="container">
 	<%
 if(request.getAttribute("vo") != null) {
 	  PartyVO vo = (PartyVO)request.getAttribute("vo");
 %>
 	<!-------------------------------- 글 수정 -------------------------------->
-	<h1>모임 내용</h1>
 	<section>
 <div>
 	<form id="updateform" method="post" action="/springtrain/partymain">
 		<input type="hidden" name="action" value="update">
 		<input type="hidden" name="post_number" value="<%= vo.getPost_number() %>">
-		<table class="b">
+		<table class="table">
 		<tr>
 		<td>Title</td><td><input type="text" size="40"  name="title" value="<%= vo.getTitle() %>"></td>
 		</tr>
@@ -104,7 +115,7 @@ if(request.getAttribute("vo") != null) {
 		<td><%=vo.getParticipant_size()%>명 참가 중</td>
 		</tr>
 		<tr>
-		<td>내용</td><td><textarea  cols="35"  rows="5" name="contents"><%= vo.getContents() %></textarea></td>
+		<td>내용</td><td><textarea  cols="100"  rows="10" name="contents"><%= vo.getContents() %></textarea></td>
 		</tr>		
 	</table>
 		<input type ="text" id ="address_revise" name="location" value = "<%=vo.getLocation() %>">
@@ -177,8 +188,8 @@ function showMap() {
 
 	<section>
 	<h5 class="middle">Train-Together</h5>
-	<table>
-	<tr>
+	<table class = "table table-hover">
+	<tr >
 		<td style="text-align:center;" >번호</td>
 		<td style="text-align:center;" >제목</td>
 		<td style="text-align:center;" >장소</td>
@@ -190,7 +201,7 @@ function showMap() {
 		if(list != null) {
 			for (PartyVO vo : list) {
 		%>
-		<tr class = "tableTitle" >
+		<tr>
 			<td width="50px" style="text-align:center;"><%=vo.getPost_number()%></td>
 			<td width="400px"><a href="/springtrain/partymain?action=read&post_number=<%=vo.getPost_number()%>"><%=vo.getTitle()%></a></td>
 			<td width="200px"><%=vo.getLocation()%></td>
@@ -203,13 +214,22 @@ function showMap() {
 		}
 		%>
 	</table>
-	</section>
-	
+
+	<FORM name="search" method="get" action="/springtrain/partymain">
+ <input type="hidden" name="action" value="search">
+     <SELECT name='col' style="width: 85px; height: 30px;" >
+       <OPTION value="contents">내용</OPTION>
+       <OPTION value="location">장소</OPTION>
+       <OPTION value="title">제목</OPTION>
+       <OPTION value="user_id">작성자</OPTION>
+     </SELECT>
+     <input id="search" type="text" name="keyword" style="height: 20px;">
+     <button type='submit'>검색</button>
+ </FORM>
 
 	
 	<!-------------------------------- 글 작성 -------------------------------->
-	<section>
-	<button onclick="displayDiv(1);">작성</button>
+	<button class="btn" onclick="displayDiv(1);">글쓰기</button>
 	<script>
 	function displayDiv(type) {
 			if (type == 1) {
@@ -285,6 +305,6 @@ function showMap() {
 		}
 	}
 	%>
-	
+	</div>
 </body>
 </html>

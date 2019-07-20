@@ -73,7 +73,7 @@ public class LoginController {
 					viewName = "welcome";
 					System.out.println("맞다");
 				} else {
-					mav.addObject("msg", "틀렸어 푸쉬업 20개");
+					mav.addObject("msg", "로그인 실패");
 					viewName = "loginView";
 					System.out.println("틀렸따");
 				}

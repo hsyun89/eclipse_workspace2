@@ -5,8 +5,20 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>train list</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+ 
+ <title>train list</title>
   <style>
+ img{
+ 	vertical-align: top;
+ }
+      body {
+        background: #f8f8f8;
+/*         background: #f8f8f8; */
+        padding-bottom: 60px 0;
+    }
  a{
 	text-decoration:none;
 	color: #000000;
@@ -55,28 +67,35 @@ form {
 </style>
 </head>
 <body>
-<form Action="/springtrain/logout" method="post">
-	<input id="logout" type="submit" value="로그아웃">
-</form>
+
+
 <br>
 	<h1 class="middle">TRAIN TOGETHER</h1>
 	<h5 class="middle">KOREA</h5>
 	<br>
 	<hr>
-	<img src="/springtrain/resources/images/list.png"  width="17">
+	<img src="/springtrain/resources/images/list.png"  width="25">
 	<span class="menu">&nbsp;&nbsp;<a href="/springtrain/trainmain">TRAINING LOG</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-	<span class="menu"><a href="/springtrain/partymain">TRAIN TOGETHER</a></span><hr>
+	<span class="menu"><a href="/springtrain/partymain">TRAIN TOGETHER</a></span>
+	<span style="float: right;">
+	<form action="/springtrain/logout" method="post">
+		<input class="btn btn-default btn-sm pull-right" id="logout" type="submit" value="로그아웃   ">
+	</form>
+	</span>
+	<hr>
+<div class="container">
 	<h5 class="middle">TRAINING LOG</h5>
 		<%
 		ArrayList<TrainVO> list = (ArrayList<TrainVO>) request.getAttribute("list");
 	%>
+
 	<table>
 		<tr>
 <!-- 			<td>code</td>
 			<td>originNo</td>
 			<td>groupOrd</td>
 			<td>groupLayer</td> -->
-			<td width="500px"><a href="/springtrain/trainmain?action=plusMaster&user_id=test"><img src="/springtrain/resources/images/plus.png"  width=17 align="right"></a></td>
+			<td width="900px"><a href="/springtrain/trainmain?action=plusMaster&user_id=test"><img src="/springtrain/resources/images/plus.png"  width=17 align="right"></a></td>
 <!-- 			<td>user_id</td> -->
 		</tr>
 		<%
@@ -87,7 +106,7 @@ form {
 			<td><%=vo.getOriginNo()%></td>
 			<td><%=vo.getGroupOrd()%></td>
 			<td><%=vo.getGroupLayer()%></td> --%>
-			<td><% for(int i=0;i<vo.getGroupLayer();i++){%>&nbsp;&nbsp;&nbsp;&nbsp;<%}%><img src="/springtrain/resources/images/dumbbell.png"  width=17>&nbsp;<a onclick="displayDiv(<%=vo.getCode()%>)" class=<%=vo.getCode()%> style="display:"><%=vo.getTitle()%></a>
+			<td><% for(int i=0;i<vo.getGroupLayer();i++){%>&nbsp;&nbsp;&nbsp;&nbsp;<%}%><img src="/springtrain/resources/images/right.png"  width=20>&nbsp;<a onclick="displayDiv(<%=vo.getCode()%>)" class=<%=vo.getCode()%> style="display:"><%=vo.getTitle()%></a>
 			<!-- 수정버튼 클릭 -->
 <%-- 			<img  onclick="displayDiv(<%=vo.getCode()%>)" src="/springtrain/resources/images/edit.png"  width=17 align="right"> --%>
 			<span class=<%=vo.getCode()%> style="display:none">
@@ -109,6 +128,7 @@ form {
 			}
 		%>
 	</table>
+	</div>
   <script> 
 	function displayDiv(code) {
 		if(document.getElementsByClassName(code)[0].style.display == 'none'){
