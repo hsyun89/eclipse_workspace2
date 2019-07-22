@@ -21,14 +21,19 @@ public class PartyController {
 	PartyDAO dao;
 
 	@RequestMapping(value = "/partymain", method = RequestMethod.GET)
-	protected ModelAndView get(String action, String select, String post_number, String col, String keyword, HttpSession session) {		ModelAndView mav = new ModelAndView();
+	protected ModelAndView get(String action, String select, String post_number, String col, String keyword, HttpSession session) {		
+		ModelAndView mav = new ModelAndView();
 //		ModelAndView mav_default = new ModelAndView();
 		List<PartyVO> list = null;
 		list = dao.listAll();
 		System.out.println(list);
 		String user = (String) session.getAttribute("user_id");
 		String viewName = "PartyView";
-
+		if(user==null) {
+			viewName="loginView";
+			mav.setViewName(viewName);
+			return mav;
+		}
 		// list
 		if (action == null) {
 			if (list != null && list.size() != 0) {
@@ -95,26 +100,34 @@ public class PartyController {
 				mav.addObject("list", dao.listAll());
 			}
 			// join
-			else if (select.equals("join")&&user!=null) {
+			else if (select.equals("join") && user != null) {
 //				PartyVO vo = dao.listOne(i_post_number);
 				vo = dao.listOne(i_post_number);
+				vo.setParticipant_size(dao.count(vo.getParty_id()));
 				ParticipantVO parvo = new ParticipantVO();
 				System.out.println("before : " + parvo.toString());
 				parvo.setParty_id(vo.getParty_id());
 				parvo.setUser_id(user);
 				System.out.println("After : " + parvo.toString());
-				boolean result = dao.join(parvo);
+				if (vo.getParticipant_size() < vo.getParty_size()) {
+					boolean result = dao.join(parvo);
+					if (result) {
+						mav.addObject("msg", "신청 완료");
+
+					} else {
+						mav.addObject("msg", "이미 신청한 이벤트입니다.");
+					}
+				} else {
+					mav.addObject("msg", "인원이 초과 되었습니다.");
+				}
+				
 				System.out.println("조인 vo 아이디 : " + vo.getUser_id());
 				System.out.println("조인 action:" + action);
 				System.out.println("조인 number:" + post_number);
 				System.out.println("조인 id:" + user);
-				System.out.println("참가신청 result 값 : " + result);
-				if (result) {
-					mav.addObject("msg", "신청 완료");
-				}
-				else {
-					mav.addObject("msg", "이미 신청한 이벤트입니다.");
-				}
+				System.out.println("조인 participant_size:" + vo.getParticipant_size());
+				System.out.println("조인 party_size:" + vo.getParty_size());
+
 				vo.setUser_id(user);
 				mav.addObject("vo", dao.listOne(i_post_number));
 				if (vo.getParty_id() != 0) {
@@ -124,6 +137,8 @@ public class PartyController {
 					mav.addObject("parlist", parlist);
 				}
 				viewName = "PartyDetail";
+				//cancel위까지
+				
 			} else if (select.equals("cancel")&&user!=null) {
 //				PartyVO vo = dao.listOne(i_post_number);
 				vo = dao.listOne(i_post_number);
@@ -153,10 +168,11 @@ public class PartyController {
 			}
 
 		}
+
 		mav.setViewName(viewName);
 		return mav;
 	}
-
+//	}
 	@RequestMapping(value = "/partymain", method = RequestMethod.POST)
 	protected ModelAndView post(String party_id, String title, String party_size, String contents, String location,
 			String post_number, String action, HttpSession session) {

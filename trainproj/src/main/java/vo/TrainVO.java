@@ -9,6 +9,21 @@ public class TrainVO {
 	private String contents;
 	private String user_id;
 	private int groupOrdTail;
+	private int flag;
+	private int collapse;
+	
+	public int getCollapse() {
+		return collapse;
+	}
+	public void setCollapse(int collapse) {
+		this.collapse = collapse;
+	}
+	public int getFlag() {
+		return flag;
+	}
+	public void setFlag(int flag) {
+		this.flag = flag;
+	}
 	public int getGroupOrdTail() {
 		return groupOrdTail;
 	}
@@ -18,7 +33,8 @@ public class TrainVO {
 	@Override
 	public String toString() {
 		return "TrainVO [code=" + code + ", originNo=" + originNo + ", groupOrd=" + groupOrd + ", groupLayer="
-				+ groupLayer + ", title=" + title + ", contents=" + contents + ", user_id=" + user_id + "]";
+				+ groupLayer + ", title=" + title + ", contents=" + contents + ", user_id=" + user_id
+				+ ", groupOrdTail=" + groupOrdTail + ", flag=" + flag + "]";
 	}
 	public int getCode() {
 		return code;

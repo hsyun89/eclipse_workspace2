@@ -6,9 +6,19 @@
 
 <head>
 <meta charset="UTF-8">
- <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/latest/js/bootstrap.min.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" rel="stylesheet">
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+	integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+	crossorigin="anonymous"></script>
 <title>TRAIN TOGETHER</title>
 <script src="http://code.jquery.com/jquery-1.7.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
@@ -26,32 +36,20 @@
 	text-decoration:none;
 	color: #000000;
 }
-/* section {
-	text-align: center;
-} */
 .middle{
 		text-align: center;
 }
-h1 {
-	text-align: center;
-}
-
 table {
-	margin: 10px auto;
-	text-align: center;
+	margin: auto;
 }
-
-td {
-	border-bottom: 1px dotted green;
+tr {
+	border-bottom: 1px solid lightgrey;
 }
-
-tr:hover {
-	background-color: pink;
-	font-weight: bold;
+td:nth-child(0) {
+	width: 100px;
 }
-
 td:nth-child(1) {
-	width: 300px;
+	width: 100px;
 }
 </style>
 
@@ -60,14 +58,14 @@ td:nth-child(1) {
 	<h1 class="middle">TRAIN TOGETHER</h1>
 	<h5 class="middle">KOREA</h5>
 	<br>
-	<hr>
+	<hr>&nbsp;&nbsp;&nbsp;&nbsp;
 	<img src="/springtrain/resources/images/list.png"  width="25">
 	<span class="menu">&nbsp;&nbsp;<a href="/springtrain/trainmain">TRAINING LOG</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 	<span class="menu"><a href="/springtrain/partymain">TRAIN TOGETHER</a></span>
 		<span style="float: right;">
 	<form action="/springtrain/logout" method="post">
-		<input class="btn btn-default btn-sm pull-right" id="logout" type="submit" value="로그아웃   ">
-	</form>
+		<input class="btn btn-secondary btn-sm id="logout" type="submit" value="로그아웃">
+	</form>&nbsp;&nbsp;&nbsp;&nbsp;
 	</span><hr>
 	<div class="container">
 	<%
@@ -76,30 +74,30 @@ td:nth-child(1) {
 			PartyVO vo = (PartyVO) request.getAttribute("vo");
 	%>
 	<!-------------------------------- 글 보기 -------------------------------->
-<!-- 	<h1>모임 내용</h1> -->
 	<br>
-	<section>
-		<%=vo.getTitle()%>
-		<hr>
-		<%=vo.getUser_id()%>
-		<hr>
-		<%=vo.getLocation()%><br> 인원
-		<%=vo.getParty_size()%>명 <br> 현재
-		<%=list.size()%>명 참가 중
-		<button>멤버보기</button>
-		<br>
+	<section name="article">
+	<table class="table">
+	<tr>
+	<td>Title</td>
+	<td><%=vo.getTitle()%></td>
+	</tr>
+	<tr>
+	<td>ID</td>
+	<td><%=vo.getUser_id()%></td>
+	</tr>
+	<tr>
+	<td>인원</td>
+	<td><%=vo.getParty_size()%>명</td>
+	<tr>
+	<td>현재</td><td><%=list.size()%>명 참가 중
 		<div id="showMember">
 			<%
-			
-/* 			int listsize = 0; */
-				/* if (list != null) */
-				/* listsize = parlist.size(); */
 				if (list != null) {
 						for (ParticipantVO parvo : list) {
 			%>
-			<table>
+			<table style="float: left;", frame=void>
 				<tr>
-					<td>ID</td>
+					<td><img src="/springtrain/resources/images/고블린.png" width=60></td>
 					<td><%=parvo.getUser_id()%></td>
 				</tr>
 			</table>
@@ -107,34 +105,24 @@ td:nth-child(1) {
 				}
 					}
 			%>
+			</td>
+		</tr>
 		</div>
-		<hr>
-		<%=vo.getContents()%>
-		<h4><%=vo.getLocation() %></h4>
-		<div id="mapid" style="width: 1000px; height: 500px;"></div>
-		
-		<br> <br>
+		<tr>
+		<td>내용</td>
+		<td><%=vo.getContents()%></td>
+		</tr>
+		<tr>
+			<td>위치</td>
+		<td><%=vo.getLocation() %>
+		<div id="mapid" style="width: 725px; height: 500px;margin:20px 0px"></div></td>
+		</tr>
+		</table>
 
-		<div>
-			<button onclick="location.href='/springtrain/partymain'">뒤로가기</button>
-
-
-			<a href="/springtrain/partymain?select=join&action=read&user=<%=session.getAttribute("user_id") %>&post_number=<%=vo.getPost_number() %>">참가하기</a>
-			<a href="/springtrain/partymain?select=cancel&action=read&user=<%=session.getAttribute("user_id") %>&post_number=<%=vo.getPost_number() %>">참가취소</a>
-			<%-- <form id="joinform" method="get" action="/springtrain/partymain">
-				<input type="hidden" name="action" value="join">
-				<input type="hidden" name="user" value=<%=vo.getUser_id()%>> 
-				<input type="hidden" name="post_number" value=<%=vo.getPost_number()%>>
-			</form>
-			<form id="cancelform" method="get" action="/springtrain/partymain">
-				<input type="hidden" name="action" value="cancel"> 
-				<input type="hidden" name="user" value=<%=vo.getUser_id()%>> 
-				<input type="hidden" name="post_number" value=<%=vo.getPost_number()%>>
-			</form> --%>
-<!-- 			<button onclick="document.getElementById('joinform').submit();"
-				style="color: green">참가하기</button>
-			<button onclick="document.getElementById('cancelform').submit();"
-				style="color: green">참가 취소</button> -->
+		<div style="margin:0 auto" align="center">
+			<button class="btn btn-secondary  btn-sm" onclick="location.href='/springtrain/partymain'">뒤로가기</button>
+			<a class="btn btn-secondary  btn-sm" href="/springtrain/partymain?select=join&action=read&user=<%=session.getAttribute("user_id") %>&post_number=<%=vo.getPost_number() %>">참가하기</a>
+			<a class="btn btn-secondary  btn-sm" href="/springtrain/partymain?select=cancel&action=read&user=<%=session.getAttribute("user_id") %>&post_number=<%=vo.getPost_number() %>">참가취소</a>
 		</div>
 
 	</section>
@@ -182,5 +170,16 @@ td:nth-child(1) {
 	
 
 </div>
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"> goblins.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 </body>
 </html>

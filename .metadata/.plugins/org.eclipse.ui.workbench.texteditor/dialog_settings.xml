@@ -6,12 +6,17 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="right" key="selection"/>
+		<item value="jdbc" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="jdbc"/>
+			<item value="mapid"/>
+			<item value="위치보기"/>
+			<item value="검색"/>
+			<item value="글쓰기"/>
 			<item value="right"/>
 			<item value="border"/>
 			<item value="line"/>
@@ -22,11 +27,6 @@
 			<item value="tick"/>
 			<item value="m_name"/>
 			<item value="Servlet"/>
-			<item value="servlet"/>
-			<item value="Meeting"/>
-			<item value="list"/>
-			<item value="VisitorVO"/>
-			<item value="json"/>
 		</list>
 		<list key="replacehistory">
 			<item value="News"/>
@@ -46,7 +46,7 @@
 		<item value="288" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="390" key="DIALOG_HEIGHT"/>
-		<item value="707" key="DIALOG_X_ORIGIN"/>
-		<item value="145" key="DIALOG_Y_ORIGIN"/>
+		<item value="215" key="DIALOG_X_ORIGIN"/>
+		<item value="253" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

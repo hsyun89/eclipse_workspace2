@@ -73,18 +73,22 @@ form {
 	<h1 class="middle">TRAIN TOGETHER</h1>
 	<h5 class="middle">KOREA</h5>
 	<br>
-	<hr>
+	<hr>&nbsp;&nbsp;&nbsp;&nbsp;
 	<img src="/springtrain/resources/images/list.png"  width="25">
 	<span class="menu">&nbsp;&nbsp;<a href="/springtrain/trainmain">TRAINING LOG</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 	<span class="menu"><a href="/springtrain/partymain">TRAIN TOGETHER</a></span>
 	<span style="float: right;">
 	<form action="/springtrain/logout" method="post">
-		<input class="btn btn-default btn-sm pull-right" id="logout" type="submit" value="로그아웃   ">
-	</form>
+		<input class="btn btn-secondary btn-sm pull-right" id="logout" type="submit" value="로그아웃">
+	</form>&nbsp;&nbsp;&nbsp;&nbsp;
 	</span>
 	<hr>
 <div class="container">
 	<h5 class="middle">TRAINING LOG</h5>
+	<div style="margin:0 auto" align="center">
+	<a class="btn btn-secondary btn-sm" href="/springtrain/trainmain?action=expandAll">모두펼치기</a>
+	<a class="btn btn-secondary btn-sm" href="/springtrain/trainmain?action=collapseAll">모두접기</a>
+	</div>
 		<%
 		ArrayList<TrainVO> list = (ArrayList<TrainVO>) request.getAttribute("list");
 	%>
@@ -94,19 +98,40 @@ form {
 <!-- 			<td>code</td>
 			<td>originNo</td>
 			<td>groupOrd</td>
-			<td>groupLayer</td> -->
+			<td>groupLayer</td>
+			<td>flag</td>
+			<td>collapse</td> -->
 			<td width="900px"><a href="/springtrain/trainmain?action=plusMaster&user_id=test"><img src="/springtrain/resources/images/plus.png"  width=17 align="right"></a></td>
 <!-- 			<td>user_id</td> -->
 		</tr>
 		<%
 			for (TrainVO vo : list) {
 		%>
-		<tr>
+			<!-- 플래그가 0이면 안보이기, 1이면 보이기 -->
+			<% String para = "";
+				if(vo.getFlag()==1){
+					para="";
+				}else{
+					para="none";
+				}
+			%>
+<!-- 		collapse가 1인 상태에서 누르면 접기쿼리, 0인 상태에서 클릭하면 펼치기쿼리-->
+			<% String collPara="";
+			if(vo.getCollapse()==1){
+				collPara="collapse";
+			}else{
+				collPara="expand";
+			}
+			%>		
+		<tr style="display:<%=para%>">
+<!-- 			<tr> -->
 <%-- 			<td><%=vo.getCode()%></td>
 			<td><%=vo.getOriginNo()%></td>
 			<td><%=vo.getGroupOrd()%></td>
-			<td><%=vo.getGroupLayer()%></td> --%>
-			<td><% for(int i=0;i<vo.getGroupLayer();i++){%>&nbsp;&nbsp;&nbsp;&nbsp;<%}%><img src="/springtrain/resources/images/right.png"  width=20>&nbsp;<a onclick="displayDiv(<%=vo.getCode()%>)" class=<%=vo.getCode()%> style="display:"><%=vo.getTitle()%></a>
+			<td><%=vo.getGroupLayer()%></td>
+			<td><%=vo.getFlag() %></td>
+			<td><%=vo.getCollapse() %></td> --%>
+			<td><% for(int i=0;i<vo.getGroupLayer();i++){%>&nbsp;&nbsp;&nbsp;&nbsp;<%}%><a href="/springtrain/trainmain?action=<%=collPara%>&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>"><img src="/springtrain/resources/images/right.png"  width=20></a>&nbsp;<a onclick="displayDiv(<%=vo.getCode()%>)" class=<%=vo.getCode()%> style="display:"><%=vo.getTitle()%></a>
 			<!-- 수정버튼 클릭 -->
 <%-- 			<img  onclick="displayDiv(<%=vo.getCode()%>)" src="/springtrain/resources/images/edit.png"  width=17 align="right"> --%>
 			<span class=<%=vo.getCode()%> style="display:none">
@@ -120,7 +145,7 @@ form {
 			<!-- 삭제버튼 클릭 -->
 			<a href="/springtrain/trainmain?action=delete&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>"><img src="/springtrain/resources/images/trash.png"  width=20 align="right"></a>
 			<!-- 추가버튼 클릭 -->
-			<a href="/springtrain/trainmain?action=plus2&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>&user_id=<%=vo.getUser_id()%>"><img src="/springtrain/resources/images/plus.png"  width=17 align="right"></a>
+			<a  href="/springtrain/trainmain?action=plus2&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>&user_id=<%=vo.getUser_id()%>"><img src="/springtrain/resources/images/plus.png"  width=17 align="right"></a>
 			</td>
 <%-- 			<td><%=vo.getUser_id()%></td> --%>
 		</tr>
@@ -145,5 +170,16 @@ form {
 		}
 	}
   </script>
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"> goblins.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 </body>
 </html>

@@ -22,21 +22,21 @@
  	</select>
  	
  	<select id="selectAllTrain" parameterType="String" resultType="vo.TrainVO">
-		select code, originNo, groupOrd, groupLayer, title, user_id from train where user_id=#{user_id} order by originNo, groupOrd ASC
+		select code, originNo, groupOrd, groupLayer, title, user_id, flag, collapse from train where user_id=#{user_id} order by originNo, groupOrd ASC
 	</select>
 	
 	<insert id="plusTrainMaster" parameterType="vo.TrainVO">
 	  	<selectKey resultType="int" keyProperty="code" order="BEFORE">
       		   select code_seq.nextval from dual   
     	</selectKey>  
-	  	insert into train (code, originNo, groupOrd, groupLayer, title, user_id) values (#{code}, #{code}, #{groupOrd}, #{groupLayer}, 'default', #{user_id})
+	  	insert into train (code, originNo, groupOrd, groupLayer, title, user_id, flag, collapse) values (#{code}, #{code}, #{groupOrd}, #{groupLayer}, 'default', #{user_id}, 1, 1)
 	</insert>
 	
 	<insert id="plusTrain" parameterType="vo.TrainVO">
 	  	<selectKey resultType="int" keyProperty="code" order="BEFORE">
       		   select code_seq.nextval from dual   
     	</selectKey>  
-	  	insert into train (code, originNo, groupOrd, groupLayer, title, user_id) values (#{code}, #{originNo}, #{groupOrd}, #{groupLayer}, 'default', #{user_id})
+	  	insert into train (code, originNo, groupOrd, groupLayer, title, user_id, flag, collapse) values (#{code}, #{originNo}, #{groupOrd}, #{groupLayer}, 'default', #{user_id}, 1, 1)
 	</insert>
 	
 	 <select id="formula1" parameterType="vo.TrainVO" resultType="int">
@@ -60,6 +60,12 @@
  		where originNo = #{originNo}
    		and groupOrd <![CDATA[>]]> #{groupOrd}
 	</select>
+	 <select id="deleteFormula1_1" parameterType="vo.TrainVO" resultType="int">
+		select * from train
+ 		where originNo = #{originNo}
+   		and groupOrd <![CDATA[>]]> #{groupOrd}
+   		and groupLayer = #{groupLayer}+1
+	</select>
 	
 	 <select id="deleteFormula2" parameterType="vo.TrainVO" resultType="int">
 		select * from train
@@ -67,12 +73,19 @@
    		and groupOrd <![CDATA[>]]> #{groupOrd}
    		and groupOrd <![CDATA[<]]> #{groupOrdTail}
 	</select>
+	 <select id="deleteFormula2_1" parameterType="vo.TrainVO" resultType="int">
+		select * from train
+ 		where originNo = #{originNo}
+   		and groupOrd <![CDATA[>]]> #{groupOrd}
+   		and groupOrd <![CDATA[<]]> #{groupOrdTail}
+   		and groupLayer = #{groupLayer}+1
+	</select>
 	
 	<insert id="plusTrain2" parameterType="vo.TrainVO">
 	  	<selectKey resultType="int" keyProperty="code" order="BEFORE">
       		   select code_seq.nextval from dual   
     	</selectKey>  
-	  	insert into train (code, originNo, groupOrd, groupLayer, title, user_id) values (#{code}, #{originNo}, #{groupOrd}, #{groupLayer}, 'default', #{user_id})
+	  	insert into train (code, originNo, groupOrd, groupLayer, title, user_id, flag, collapse) values (#{code}, #{originNo}, #{groupOrd}, #{groupLayer}, 'default', #{user_id}, 1, 1)
 	</insert>
 	
 	<delete id="deleteTrain" parameterType="_int">
@@ -83,6 +96,28 @@
 		update train set title =#{title} where code = #{code}
 	</update>
 	
+	<update id="collapseToExpandTrain" parameterType="_int">
+		update train set collapse = 0 where code = #{code}
+	</update>
+	<update id="expandToCollapseTrain" parameterType="_int">
+		update train set collapse = 1 where code = #{code}
+	</update>
+	
+	<update id="updateCollpaseFlagTrain" parameterType="_int">
+		update train set flag =0 where code = #{code}
+	</update>
+	<update id="updateExpandFlagTrain" parameterType="_int">
+		update train set flag =1, collapse=0 where code = #{code}
+	</update>
+	<update id="expandAll" >
+		update train set flag =1, collapse=1
+	</update>
+	<update id="collapseAll" >
+		update train set flag =0, collapse=0
+	</update>
+	<update id="collapseAllSecond">
+		update train set flag=1 where groupOrd=0 and groupLayer=0
+	</update>
 <!-- 	<update id="update1" parameterType="vo.TrainVO">
 		update train set groupOrd =groupOrd+1 where originNo = #{originNo} and groupOrd>#{groupOrd}
 	</update> -->

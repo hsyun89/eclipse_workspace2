@@ -1,5 +1,7 @@
 package trainproj.spring.springtrain;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +21,14 @@ public class TrainController {
 	@RequestMapping(value = "/trainmain", method = RequestMethod.GET)
 	public ModelAndView get(String action, String code, String originNo, String groupOrd, String groupLayer,
 			HttpSession session, String title) {
+		ModelAndView mav = new ModelAndView();
 		TrainVO vo = new TrainVO();
 		String user_id = (String) session.getAttribute("user_id");
+		if(user_id==null) {
+			String viewName="loginView";
+			mav.setViewName(viewName);
+			return mav;
+		}
 		if (action != null) {
 			if (action.equals("plusMaster")) {
 					vo.setGroupOrd(0);
@@ -57,8 +65,30 @@ public class TrainController {
 				vo.setTitle(title);
 				dao.edit(vo);
 			}
+			if(action.equals("collapse")) {
+				dao.collapseToExpand(Integer.parseInt(code));
+				vo.setCode(Integer.parseInt(code));
+				vo.setOriginNo(Integer.parseInt(originNo));
+				vo.setGroupOrd(Integer.parseInt(groupOrd));
+				vo.setGroupLayer(Integer.parseInt(groupLayer));
+				dao.collapseFlag(vo);
+			}
+			if(action.equals("expand")) {
+				dao.expandToCollapse(Integer.parseInt(code));
+				vo.setCode(Integer.parseInt(code));
+				vo.setOriginNo(Integer.parseInt(originNo));
+				vo.setGroupOrd(Integer.parseInt(groupOrd));
+				vo.setGroupLayer(Integer.parseInt(groupLayer));
+				dao.expandFlag(vo);
+			}
+			if(action.equals("expandAll")) {
+				dao.expandAll();
+			}
+			if(action.equals("collapseAll")) {
+				dao.collapseAll();
+			}
 		}
-		ModelAndView mav = new ModelAndView();
+		
 		mav.addObject("list", dao.listAll(user_id));
 		mav.setViewName("workoutList");
 		return mav;
