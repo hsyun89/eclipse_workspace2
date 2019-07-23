@@ -9,7 +9,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
  
- <title>train list</title>
+ <title>TRAIN TOGETHER</title>
   <style>
  img{
  	vertical-align: top;
@@ -43,6 +43,9 @@ tr:hover {
 	background-color: lightgrey;
 	font-weight: bold;
 }
+body{
+	font-size: 20px;
+}
 /* td:nth-child(1) {
 	width: 50px;
 }
@@ -74,7 +77,7 @@ form {
 	<h5 class="middle">KOREA</h5>
 	<br>
 	<hr>&nbsp;&nbsp;&nbsp;&nbsp;
-	<img src="/springtrain/resources/images/list.png"  width="25">
+	<img src="/springtrain/resources/images/list.png"  width="35">
 	<span class="menu">&nbsp;&nbsp;<a href="/springtrain/trainmain">TRAINING LOG</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 	<span class="menu"><a href="/springtrain/partymain">TRAIN TOGETHER</a></span>
 	<span style="float: right;">
@@ -101,7 +104,7 @@ form {
 			<td>groupLayer</td>
 			<td>flag</td>
 			<td>collapse</td> -->
-			<td width="900px"><a href="/springtrain/trainmain?action=plusMaster&user_id=test"><img src="/springtrain/resources/images/plus.png"  width=17 align="right"></a></td>
+			<td width="900px"><a href="/springtrain/trainmain?action=plusMaster&user_id=test"><img src="/springtrain/resources/images/plus.png"  width=25 align="right"></a></td>
 <!-- 			<td>user_id</td> -->
 		</tr>
 		<%
@@ -131,7 +134,7 @@ form {
 			<td><%=vo.getGroupLayer()%></td>
 			<td><%=vo.getFlag() %></td>
 			<td><%=vo.getCollapse() %></td> --%>
-			<td><% for(int i=0;i<vo.getGroupLayer();i++){%>&nbsp;&nbsp;&nbsp;&nbsp;<%}%><a href="/springtrain/trainmain?action=<%=collPara%>&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>"><img src="/springtrain/resources/images/right.png"  width=20></a>&nbsp;<a onclick="displayDiv(<%=vo.getCode()%>)" class=<%=vo.getCode()%> style="display:"><%=vo.getTitle()%></a>
+			<td><% for(int i=0;i<vo.getGroupLayer();i++){%>&nbsp;&nbsp;&nbsp;&nbsp;<%}%><a href="/springtrain/trainmain?action=<%=collPara%>&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>"><img src="/springtrain/resources/images/image<%=vo.getGroupLayer() %>.png"  width=25></a>&nbsp;<a onclick="displayDiv(<%=vo.getCode()%>)" class=<%=vo.getCode()%> style="display:"><%=vo.getTitle()%></a>
 			<!-- 수정버튼 클릭 -->
 <%-- 			<img  onclick="displayDiv(<%=vo.getCode()%>)" src="/springtrain/resources/images/edit.png"  width=17 align="right"> --%>
 			<span class=<%=vo.getCode()%> style="display:none">
@@ -143,9 +146,9 @@ form {
 			</form>
 			</span>
 			<!-- 삭제버튼 클릭 -->
-			<a href="/springtrain/trainmain?action=delete&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>"><img src="/springtrain/resources/images/trash.png"  width=20 align="right"></a>
+			<a href="/springtrain/trainmain?action=delete&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>"><img src="/springtrain/resources/images/trash.png"  width=25 align="right"></a>
 			<!-- 추가버튼 클릭 -->
-			<a  href="/springtrain/trainmain?action=plus2&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>&user_id=<%=vo.getUser_id()%>"><img src="/springtrain/resources/images/plus.png"  width=17 align="right"></a>
+			<a  href="/springtrain/trainmain?action=plus2&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>&user_id=<%=vo.getUser_id()%>"><img src="/springtrain/resources/images/plus.png"  width=25 align="right"></a>
 			</td>
 <%-- 			<td><%=vo.getUser_id()%></td> --%>
 		</tr>

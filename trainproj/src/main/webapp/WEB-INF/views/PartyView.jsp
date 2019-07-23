@@ -52,6 +52,9 @@ table {
 form {
 	display: inline;
 }
+body{
+	font-size: 20px;
+}
 </style>
 <body>
 	<br>
@@ -59,7 +62,7 @@ form {
 	<h5 class="middle">KOREA</h5>
 	<br>
 	<hr>&nbsp;&nbsp;&nbsp;&nbsp;
-	<img src="/springtrain/resources/images/list.png" width="25">
+	<img src="/springtrain/resources/images/list.png" width="35">
 	<span class="menu">&nbsp;&nbsp;<a href="/springtrain/trainmain">TRAINING
 			LOG</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	</span>
@@ -138,11 +141,11 @@ form {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">EMAIL</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-       <%=parvo.getUser_id()%>
+       <%=parvo.getEmail()%>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
@@ -304,15 +307,15 @@ form {
 						<tr>
 							<td>제목</td>
 							<td><input size="100" type="text" id="m_title" name="title"
-								placeholer="제목을 입력하세요"></td>
+								placeholder="제목 입력" required="required"></td>
 						<tr>
 							<td>인원</td>
-							<td><input size="100" type="int" id="m_size" name="party_size"
-								placeholer="최대인원을 입력하세요"></td>
+							<td><input size="100" type="number" id="m_size" name="party_size"
+								placeholder="최대인원 입력" required="required"></td>
 						<tr>
 							<td>내용</td>
 							<td><textarea cols="100" rows="10" name="contents"
-									placeholder="내용을 입력하세요"></textarea></td>
+									placeholder="내용 입력" required="required"></textarea></td>
 						</tr>
 
 					<tr>

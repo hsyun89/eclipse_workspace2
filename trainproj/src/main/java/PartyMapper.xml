@@ -27,7 +27,7 @@
      </select>
      
      <select id="checkParticipant" parameterType="_int" resultType="vo.ParticipantVO">
-     select party_id, user_id from participant where party_id = #{party_id}
+     select participant.party_id, participant.user_id, member.email from participant, member where participant.user_id=member.user_id and party_id = #{party_id}
      </select>
      
   	<insert id="insertParty"  parameterType="vo.PartyVO">
