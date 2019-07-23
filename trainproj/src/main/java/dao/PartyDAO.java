@@ -136,7 +136,6 @@ public class PartyDAO {
 	
 	public List<ParticipantVO> listMember(int party_id) {
 		List<ParticipantVO> parlist = null;
-
 		String statement = "resource.PartyMapper.checkParticipant";
 		parlist = session.selectList(statement,party_id);
 		return parlist;
