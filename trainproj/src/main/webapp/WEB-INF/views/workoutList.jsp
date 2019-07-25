@@ -98,12 +98,12 @@ form {
 
 	<table>
 		<tr>
-<!-- 			<td>code</td>
+ 			<td>code</td>
 			<td>originNo</td>
 			<td>groupOrd</td>
 			<td>groupLayer</td>
 			<td>flag</td>
-			<td>collapse</td> -->
+			<td>collapse</td>
 			<td width="900px"><a href="/springtrain/trainmain?action=plusMaster&user_id=test"><img src="/springtrain/resources/images/plus.png"  width=25 align="right"></a></td>
 <!-- 			<td>user_id</td> -->
 		</tr>
@@ -128,12 +128,12 @@ form {
 			%>		
 		<tr style="display:<%=para%>">
 <!-- 			<tr> -->
-<%-- 			<td><%=vo.getCode()%></td>
+ 			<td><%=vo.getCode()%></td>
 			<td><%=vo.getOriginNo()%></td>
 			<td><%=vo.getGroupOrd()%></td>
 			<td><%=vo.getGroupLayer()%></td>
 			<td><%=vo.getFlag() %></td>
-			<td><%=vo.getCollapse() %></td> --%>
+			<td><%=vo.getCollapse() %></td>
 			<td><% for(int i=0;i<vo.getGroupLayer();i++){%>&nbsp;&nbsp;&nbsp;&nbsp;<%}%><a href="/springtrain/trainmain?action=<%=collPara%>&code=<%=vo.getCode()%>&originNo=<%=vo.getOriginNo()%>&groupOrd=<%=vo.getGroupOrd()%>&groupLayer=<%=vo.getGroupLayer()%>"><img src="/springtrain/resources/images/image<%=vo.getGroupLayer() %>.png"  width=25></a>&nbsp;<a onclick="displayDiv(<%=vo.getCode()%>)" class=<%=vo.getCode()%> style="display:"><%=vo.getTitle()%></a>
 			<!-- 수정버튼 클릭 -->
 <%-- 			<img  onclick="displayDiv(<%=vo.getCode()%>)" src="/springtrain/resources/images/edit.png"  width=17 align="right"> --%>

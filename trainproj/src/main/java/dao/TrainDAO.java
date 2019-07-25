@@ -76,16 +76,13 @@ public class TrainDAO {
 		if (param1 == 0) {
 			statement = "resource.TrainMapper.deleteFormula1";
 			list = session.selectList(statement, vo);
-			System.out.println("하잇");
 		} else {
 			statement = "resource.TrainMapper.deleteFormula2";
 			vo.setGroupOrdTail(param1);
 			list = session.selectList(statement, vo);
-			System.out.println("요");
 		}
 		// 요기까지 하다감!
 		list.add(vo.getCode());
-		System.out.println(list.toString());
 //		statement = "resource.TrainMapper.deleteTrain";
 //		if (session.delete(statement, vo.getCode()) != 1)
 //			result = false;

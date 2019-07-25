@@ -26,7 +26,6 @@ public class PartyController {
 //		ModelAndView mav_default = new ModelAndView();
 		List<PartyVO> list = null;
 		list = dao.listAll();
-		System.out.println(list);
 		String user = (String) session.getAttribute("user_id");
 		String viewName = "PartyView";
 		if(user==null) {
@@ -42,21 +41,16 @@ public class PartyController {
 		}
 		//search
 		if (action!=null && action.equals("search")) {
-            System.out.println("서치시작");
            if (list.size() != 0 && col.equals("title")) {
-               System.out.println("서칭 title 키워드 : " + keyword);
                list = dao.searchTitle(keyword);
                mav.addObject("list", list);
            } else if (list.size() != 0 && col.equals("location")) {
-               System.out.println("서칭 location 키워드 : " + keyword);
                list = dao.searchLocation(keyword);
                mav.addObject("list", list);
            } else if (list.size() != 0 && col.equals("user_id")) {
-               System.out.println("서칭 user_id 키워드 : " + keyword);
                list = dao.searchUser_id(keyword);
                mav.addObject("list", list);
            } else if (list.size() != 0 && col.equals("contents")) {
-               System.out.println("서칭 contents 키워드 : " + keyword);
                list = dao.searchContents(keyword);
                mav.addObject("list", list);
            } else {
@@ -81,7 +75,6 @@ public class PartyController {
 				if (vo.getParty_id() != 0) {
 					List<ParticipantVO> parlist = null;
 					parlist = dao.listMember(vo.getParty_id());
-					System.out.println("하나 클릭 체크 : " + parlist);
 					mav.addObject("parlist", parlist);
 				}
 				if (!user.equals(vo.getUser_id())) {
@@ -93,7 +86,6 @@ public class PartyController {
 				boolean result = dao.delete(i_post_number);
 				if (result) {
 					mav.addObject("msg", "글 삭제 성공");
-					System.out.println("삭제");
 				} else {
 					mav.addObject("msg", "글 삭제 실패");
 				}
@@ -105,10 +97,8 @@ public class PartyController {
 				vo = dao.listOne(i_post_number);
 				vo.setParticipant_size(dao.count(vo.getParty_id()));
 				ParticipantVO parvo = new ParticipantVO();
-				System.out.println("before : " + parvo.toString());
 				parvo.setParty_id(vo.getParty_id());
 				parvo.setUser_id(user);
-				System.out.println("After : " + parvo.toString());
 				if (vo.getParticipant_size() < vo.getParty_size()) {
 					boolean result = dao.join(parvo);
 					if (result) {
@@ -120,20 +110,11 @@ public class PartyController {
 				} else {
 					mav.addObject("msg", "인원이 초과 되었습니다.");
 				}
-				
-				System.out.println("조인 vo 아이디 : " + vo.getUser_id());
-				System.out.println("조인 action:" + action);
-				System.out.println("조인 number:" + post_number);
-				System.out.println("조인 id:" + user);
-				System.out.println("조인 participant_size:" + vo.getParticipant_size());
-				System.out.println("조인 party_size:" + vo.getParty_size());
-
 				vo.setUser_id(user);
 				mav.addObject("vo", dao.listOne(i_post_number));
 				if (vo.getParty_id() != 0) {
 					List<ParticipantVO> parlist = null;
 					parlist = dao.listMember(vo.getParty_id());
-					System.out.println("하나 클릭 체크 : " + parlist);
 					mav.addObject("parlist", parlist);
 				}
 				viewName = "PartyDetail";
@@ -145,9 +126,6 @@ public class PartyController {
 				ParticipantVO parvo = new ParticipantVO();
 				parvo.setParty_id(vo.getParty_id());
 				parvo.setUser_id(user);
-				System.out.println("취소 vo 아이디 : " + vo.getUser_id());
-				System.out.println("취소 action:" + action);
-				System.out.println("취소 id:" + user);
 				boolean result = dao.cancel(parvo);
 				if (!result) {
 					mav.addObject("msg", "참가된 이벤트가 아닙니다.");
@@ -155,13 +133,10 @@ public class PartyController {
 					mav.addObject("msg", "참가 취소 완료");
 				}
 				vo.setUser_id(user);
-				System.out.println("취소 vo 아이디 수정 후 : " + vo.getUser_id());
-				System.out.println("취소 vo 투 스트링 : " + vo.toString());
 				mav.addObject("vo", dao.listOne(i_post_number));
 				if (vo.getParty_id() != 0) {
 					List<ParticipantVO> parlist = null;
 					parlist = dao.listMember(vo.getParty_id());
-					System.out.println("하나 클릭 체크 : " + parlist);
 					mav.addObject("parlist", parlist);
 				}
 				viewName = "PartyDetail";
@@ -179,11 +154,6 @@ public class PartyController {
 		ModelAndView mav = new ModelAndView();
 		String viewName = "PartyView";
 		String user = (String) session.getAttribute("user_id");
-
-		//
-		System.out.println("post action:" + action);
-		System.out.println("post number:" + post_number);
-		System.out.println("post party:" + party_id);
 
 		if (!action.equals(null)) {
 

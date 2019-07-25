@@ -23,7 +23,6 @@ public class PartyDAO {
 //		vo.setParticipant_size(count(parvo.getParty_id()));
 		String statement = "resource.PartyMapper.selectParty";
 		list = session.selectList(statement);
-		System.out.println("숫자 : " + count(list.get(0).getParty_id()));
 		for (int i = 0; i < list.size(); i++) {
 				list.get(i).setParticipant_size(count(list.get(i).getParty_id()));
 		}
@@ -44,7 +43,6 @@ public class PartyDAO {
 			ParticipantVO parvo = new ParticipantVO();
 			parvo.setParty_id(vo.getParty_id());
 			parvo.setUser_id(vo.getUser_id());
-			System.out.println(parvo);
 			result = join(parvo);
 		}
 		return result;
@@ -84,10 +82,8 @@ public class PartyDAO {
 	//////////////////////////2단계//////////////////////////
 	public boolean check(ParticipantVO parvo) {
 		boolean result = false;
-		System.out.println("이건 뭐지 : " + parvo);
 		String statement = "resource.PartyMapper.checkParty";
 		ParticipantVO pid = session.selectOne(statement, parvo);
-		System.out.println("체크 pid : " + pid);
 		if (pid != null) {
 			result = true;
 		} else {
@@ -115,10 +111,7 @@ public class PartyDAO {
 
 	public boolean cancel(ParticipantVO parvo) {
 		boolean result = true;
-		System.out.println("취소 id DAO 체크 : " + parvo.getUser_id());
-		System.out.println("취소 파티 id dao 체크 : " + parvo.getParty_id());
 		String statement = "resource.PartyMapper.cancelJoin";
-		System.out.println("취소 체크 : " + parvo);
 		int pid = session.delete(statement, parvo); 
 		if (pid!=1) {
 			result = false;

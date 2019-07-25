@@ -20,7 +20,6 @@ public class MemberDAO {
 				result = false;
 			}
 		} catch (Exception e) {
-			System.out.println(e + " 중복된 아이디 혹은 이메일 입니다.");
 			result = false;
 		}
 		return result;
@@ -29,9 +28,7 @@ public class MemberDAO {
 	public boolean login(MemberVO vo) {
 		boolean result = true;
 		String statement = "resource.MemberMapper.login";
-		System.out.println("디비 아이디 : " + vo.getUser_id() + "디비 비밀번호 : " + vo.getPasswd());
 		MemberVO logVo = session.selectOne(statement, vo);
-		System.out.println(logVo);
 		if (logVo == null) {
 			result = false;
 		} else {
