@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\student\Desktop\HadoopPJ"/>
 		<item value="C:\Users\student\Desktop\vakata-jstree-3.3.8-0-gc9d7c14\vakata-jstree-c9d7c14"/>
 		<item value="C:\HS\eclipse_workspace\trainproj"/>
 		<item value="C:\HS\eclipse_workspace"/>
