@@ -9683,3 +9683,65 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact xmlpull:xmlpu
 2019-08-02 09:46:39,782 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\student\Desktop\HadoopPJ\src\main\resources
 2019-08-02 09:46:39,783 [Worker-34: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
 2019-08-02 09:46:39,784 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\student\Desktop\HadoopPJ\src\test\resources
+2019-08-02 17:37:29,386 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2019-08-02 17:37:34,622 [Worker-10: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.jslsolucoes:ojdbc6:jar:11.2.0.1.0 is missing, no dependency information available
+2019-08-02 17:37:35,603 [Worker-10: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-02 17:37:35,608 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-02 17:37:35,614 [Worker-10: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-02 17:37:35,616 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-02 17:37:35,954 [Worker-10: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.jslsolucoes:ojdbc6:jar:11.2.0.1.0 is missing, no dependency information available
+2019-08-02 17:37:36,032 [Worker-10: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-02 17:37:36,034 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-02 17:37:36,035 [Worker-10: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-02 17:37:36,037 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-02 17:37:36,114 [Worker-10: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.jslsolucoes:ojdbc6:jar:11.2.0.1.0 is missing, no dependency information available
+2019-08-02 17:37:36,133 [Worker-10: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-02 17:37:36,134 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-02 17:37:36,136 [Worker-10: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-02 17:37:36,137 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-02 17:38:02,762 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-08-02 17:38:05,809 [Worker-11: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.jslsolucoes:ojdbc6:jar:11.2.0.1.0 is missing, no dependency information available
+2019-08-02 17:38:06,726 [Worker-11: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-02 17:38:06,730 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-02 17:38:06,737 [Worker-11: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-02 17:38:06,738 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-07 13:18:49,515 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2019-08-07 13:19:08,205 [Worker-4: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.jslsolucoes:ojdbc6:jar:11.2.0.1.0 is missing, no dependency information available
+2019-08-07 13:19:12,535 [Worker-4: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:19:12,540 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-07 13:19:12,562 [Worker-4: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:19:12,563 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-07 13:19:14,348 [Worker-15: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:19:14,350 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\HS\eclipse_workspace\springioc\src\main\resources
+2019-08-07 13:19:14,351 [Worker-15: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:19:14,352 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\HS\eclipse_workspace\springioc\src\test\resources
+2019-08-07 13:19:16,391 [Worker-15: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:19:16,392 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\HS\eclipse_workspace\springioclab\src\main\resources
+2019-08-07 13:19:16,393 [Worker-15: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:19:16,395 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\HS\eclipse_workspace\springioclab\src\test\resources
+2019-08-07 13:19:17,422 [Worker-15: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.jslsolucoes:ojdbc6:jar:11.2.0.1.0 is missing, no dependency information available
+2019-08-07 13:19:17,441 [Worker-15: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:19:17,458 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-07 13:19:17,463 [Worker-15: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:19:17,464 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-07 13:19:18,297 [Worker-15: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.jslsolucoes:ojdbc6:jar:11.2.0.1.0 is missing, no dependency information available
+2019-08-07 13:19:18,317 [Worker-15: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:19:18,319 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-07 13:19:18,338 [Worker-15: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:19:18,352 [Worker-15: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-07 13:23:16,264 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-08-07 13:23:20,443 [Worker-0: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.jslsolucoes:ojdbc6:jar:11.2.0.1.0 is missing, no dependency information available
+2019-08-07 13:23:21,516 [Worker-0: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:23:21,521 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-07 13:23:21,527 [Worker-0: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:23:21,529 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-07 13:23:21,905 [Worker-0: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.jslsolucoes:ojdbc6:jar:11.2.0.1.0 is missing, no dependency information available
+2019-08-07 13:23:21,928 [Worker-0: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:23:21,930 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-07 13:23:21,931 [Worker-0: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:23:21,933 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-07 13:23:22,618 [Worker-2: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.jslsolucoes:ojdbc6:jar:11.2.0.1.0 is missing, no dependency information available
+2019-08-07 13:23:22,666 [Worker-2: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:23:22,668 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-07 13:23:22,670 [Worker-2: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-07 13:23:22,673 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
