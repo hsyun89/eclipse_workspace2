@@ -1,9 +1,9 @@
-package day1;
+ï»¿package day1;
 
 public class Exercise3 {
 
 	public static void main(String[] args) {
-	char name1='À±', name2='Çö', name3='¼ö';
+	char name1='ìœ¤', name2='í˜„', name3='ìˆ˜';
 	System.out.print(name1);
 	System.out.print(name2);
 	System.out.print(name3);

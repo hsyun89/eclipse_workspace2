@@ -24,7 +24,7 @@ public class Main {
 			}
 		}
 		ArrayList<Integer> list=new ArrayList<>();
-		list.add(hash.putAll(m););
+//		list.add(hash.putAll(m));
 		
 		
 		int[] answer = {};
