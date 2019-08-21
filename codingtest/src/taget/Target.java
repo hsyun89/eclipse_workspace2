@@ -4,7 +4,7 @@ public class Target {
 
 	public static void main(String[] args) {
 		int[] numbers= {1, 1, 1, 1, 1};
-		-1 1 1 1
+//		-1 1 1 1
 		
 		int target = 3;
 		System.out.print(solution(numbers,target));

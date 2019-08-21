@@ -1,16 +1,16 @@
 package day2;
 public class PrintfTest {
 	public static void main(String[] args) {
-		System.out.printf("Å×½ºÆ®ÀÔ´Ï´ç\n");		
+		System.out.printf("ï¿½×½ï¿½Æ®ï¿½Ô´Ï´ï¿½\n");		
 		System.out.printf("%d %x %o %c\n", 100, 100, 100, 100);
-		System.out.printf("%c %c %c %c\n", '°¡', 'A', '!', '3' );
+//		System.out.printf("%c %c %c %c\n", 'ï¿½ï¿½', 'A', '!', '3' );
 		System.out.printf("%b\n", true);
 		System.out.printf("%f %e\n", 100.0, 100.0);
 		System.out.printf("%.2f\n", 123.5678);
-		System.out.printf("|%s|\n", "ÀÚ¹Ù");
-		System.out.printf("|%10s|\n", "ÀÚ¹Ù");
-		System.out.printf("|%-10s|\n", "ÀÚ¹Ù");
-		System.out.printf("%,d¿ø\n", 1000000);			
+		System.out.printf("|%s|\n", "ï¿½Ú¹ï¿½");
+		System.out.printf("|%10s|\n", "ï¿½Ú¹ï¿½");
+		System.out.printf("|%-10s|\n", "ï¿½Ú¹ï¿½");
+		System.out.printf("%,dï¿½ï¿½\n", 1000000);			
 	}
 }
 

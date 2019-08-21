@@ -1,4 +1,4 @@
-package day5;
+ï»¿package day5;
 
 public class MethodLab1 {
 
@@ -9,7 +9,7 @@ public class MethodLab1 {
 		System.out.println();
 		printCha('A', 5);
 		System.out.println();
-		printCha('°¡', 3);
+		printCha('ê°€', 3);
 		System.out.println();
 	}
 

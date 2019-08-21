@@ -1,18 +1,18 @@
-package day2;
+ï»¿package day2;
 
 public class WhileTest3 {
 
 	public static void main(String[] args) {
-//		System.out.println("main() ¼öÇà ½ÃÀÛ");
-		System.out.printf("main() ¼öÇà ½ÃÀÛ\n");
-		char munja = '°¡';
-		while(munja<'³ª') {
+//		System.out.println("main() ìˆ˜í–‰ ì‹œì‘");
+		System.out.printf("main() ìˆ˜í–‰ ì‹œì‘\n");
+		char munja = 'ê°€';
+		while(munja<'ë‚˜') {
 //			System.out.println(munja);
 //			System.out.printf("%c\n", munja);
 			System.out.printf("%c  %d  %#x\n",munja, (int)munja, (int)munja);
 			munja++;
 		}
-//		System.out.println("main() ¼öÇà Á¾·á");
-		System.out.printf("main() ¼öÇà Á¾·á\n");
+//		System.out.println("main() ìˆ˜í–‰ ì¢…ë£Œ");
+		System.out.printf("main() ìˆ˜í–‰ ì¢…ë£Œ\n");
 	}
 }

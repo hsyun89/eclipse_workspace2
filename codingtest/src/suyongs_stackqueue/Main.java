@@ -1,8 +1,8 @@
 package suyongs_stackqueue;
 
-class LinkedNode {// LinekedList¸¦ ±¸¼ºÇÏ´Â node Å¬·¡½º
+class LinkedNode {// LinekedListï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ node Å¬ï¿½ï¿½ï¿½ï¿½
 	int val;
-	LinkedNode next; // ´ÙÀ½ node¸¦ °¡¸£Å°±â À§ÇÑ °´Ã¼
+	LinkedNode next; // ï¿½ï¿½ï¿½ï¿½ nodeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
 
 	LinkedNode(int val) {
 		next = null;
@@ -11,8 +11,8 @@ class LinkedNode {// LinekedList¸¦ ±¸¼ºÇÏ´Â node Å¬·¡½º
 }
 
 class LinkedList {
-	LinkedNode first; // LinekedListÀÇ Ã¹ node
-	LinkedNode last; // LinekedListÀÇ ¸¶Áö¸· node
+	LinkedNode first; // LinekedListï¿½ï¿½ Ã¹ node
+	LinkedNode last; // LinekedListï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ node
 
 	LinkedList() {
 		first = null;
@@ -24,22 +24,22 @@ class LinkedList {
 	}
 
 	protected void addLast(int val) {
-		// ¿©±â¸¦ ±¸ÇöÇÏ¼¼¿ä
+		// ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½
 	}
 
-	protected Boolean removeFirst() {
-		// ¿©±â¸¦ ±¸ÇöÇÏ¼¼¿ä
-	}
-
-	protected Boolean removeLast() {
-		// ¿©±â¸¦ ±¸ÇöÇÏ¼¼¿ä
-	}
+//	protected Boolean removeFirst() {
+//		// ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½
+//	}
+//
+//	protected Boolean removeLast() {
+//		// ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½
+//	}
 
 	protected void printList() {
 		LinkedNode current = first;
-		while (current != null) { // current ³ëµå°¡ null ¾Æ´Ò¶§ ±îÁö ½ÇÇà
+		while (current != null) { // current ï¿½ï¿½å°¡ null ï¿½Æ´Ò¶ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			System.out.println(current.val);
-			current = current.next; // next ³ëµå¸¦ current¿¡ µ¤¾î ¾º¿ò
+			current = current.next; // next ï¿½ï¿½å¸¦ currentï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		}
 	}
 }
@@ -54,7 +54,7 @@ class Queue extends LinkedList {
 	}
 
 	public void remove() {
-		System.out.println("»èÁ¦ °á°ú : " + super.removeFirst());
+//		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ : " + super.removeFirst());
 	}
 
 	public void printList() {
@@ -66,7 +66,7 @@ class Queue extends LinkedList {
 
 class Stack extends LinkedList {
 	Stack() {
-		super(); // LinkedListÀÇ »ý¼ºÀÚ¸¦ ½ÇÇà
+		super(); // LinkedListï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 
 	public void add(int val) {
@@ -74,7 +74,7 @@ class Stack extends LinkedList {
 	}
 
 	public void remove() {
-		System.out.println("»èÁ¦ °á°ú : " + super.removeFirst());
+//		System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ : " + super.removeFirst());
 	}
 
 	public void printList() {
@@ -111,11 +111,11 @@ public class Main {
 	}
 }
 /*
- * -----------¼³¸í-------------- Áö³­¹ø¿¡ ¹è¿î stack, queue¿¡ ´ëÇÑ ±¸Çö 1. ¾ð¾î : ÀÚ¹Ù 2. »ç¿ëÇÑ
- * ÀÚ·á±¸Á¶ : ¿¬°á¸®½ºÆ®
+ * -----------ï¿½ï¿½ï¿½ï¿½-------------- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ stack, queueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1. ï¿½ï¿½ï¿½ : ï¿½Ú¹ï¿½ 2. ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½Ú·á±¸ï¿½ï¿½ : ï¿½ï¿½ï¿½á¸®ï¿½ï¿½Æ®
  * 
- * Ã·ºÎÇÑ Å¬·¡½º´ÙÀÌ¾î±×·¥ »çÁø°ú ¼Ò½ºÄÚµå¿¡ Ã·ºÎÇÑ ÁÖ¼®À» Âü°íÇÏ¸é ÀÌÇØ°¡ µÊ
+ * Ã·ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½×·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò½ï¿½ï¿½Úµå¿¡ Ã·ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½Ø°ï¿½ ï¿½ï¿½
  * 
- * ÀÌ ÄÚµå¸¦ ´Ù ÀÐ°í ÀÌÇØ°¡ µÈ´Ù¸é ¸¶½ºÅÍÇÏ´Â °³³ä! 1. ÀÚ·á±¸Á¶ÀÇ ¿¬°á¸®½ºÆ® 2. ÀÚ¹ÙÀÇ Á¢±Ù±ÇÇÑÀÚ 3. ÀÚ¹ÙÀÇ Å¬·¡½ºÀÇ »ó¼Ó 4.
- * ½ºÅÃ°ú Å¥ ----------------------------
+ * ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ï¿½ ï¿½Ð°ï¿½ ï¿½ï¿½ï¿½Ø°ï¿½ ï¿½È´Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½! 1. ï¿½Ú·á±¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½á¸®ï¿½ï¿½Æ® 2. ï¿½Ú¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù±ï¿½ï¿½ï¿½ï¿½ï¿½ 3. ï¿½Ú¹ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 4.
+ * ï¿½ï¿½ï¿½Ã°ï¿½ Å¥ ----------------------------
  */

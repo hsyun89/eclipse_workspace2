@@ -19,8 +19,8 @@ public class Main {
 			clot = clothes[i][1];
 			if(!hm.containsKey(clot))
 				hm.put(clothes[i][1], 1);
-			else
-				hm.put(key, )
+//			else
+//				hm.put(key, )
 		}
 
 
