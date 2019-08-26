@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\HS\eclipse_workspace2"/>
 		<item value="C:\Users\student\Desktop\clone\eclipse_workspace"/>
 		<item value="C:\Users\student\Desktop\threadexam"/>
 		<item value="C:\Users\student\Desktop\HadoopPJ"/>
