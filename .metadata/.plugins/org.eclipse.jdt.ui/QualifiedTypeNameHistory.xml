@@ -33,4 +33,9 @@
 <fullyQualifiedTypeName name="java.util.logging.Logger"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.rosuda.REngine.Rserve.RConnection"/>
+<fullyQualifiedTypeName name="org.rosuda.JRI.REXP"/>
+<fullyQualifiedTypeName name="org.rosuda.REngine.REXP"/>
+<fullyQualifiedTypeName name="org.rosuda.REngine.RList"/>
+<fullyQualifiedTypeName name="rjava.OnePersonService"/>
 </qualifiedTypeNameHistroy>
